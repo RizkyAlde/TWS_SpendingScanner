@@ -70,19 +70,19 @@
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Welcome!</h6>
             </div>
-            <a href="../examples/profile.html" class="dropdown-item">
+            <a href="../additional/profile.html" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
             </a>
-            <a href="../examples/profile.html" class="dropdown-item">
+            <a href="../additional/profile.html" class="dropdown-item">
               <i class="ni ni-settings-gear-65"></i>
               <span>Settings</span>
             </a>
-            <a href="../examples/profile.html" class="dropdown-item">
+            <a href="../additional/profile.html" class="dropdown-item">
               <i class="ni ni-calendar-grid-58"></i>
               <span>Activity</span>
             </a>
-            <a href="../examples/profile.html" class="dropdown-item">
+            <a href="../additional/profile.html" class="dropdown-item">
               <i class="ni ni-support-16"></i>
               <span>Support</span>
             </a>
@@ -125,39 +125,24 @@
         </form>
         <!-- Navigation -->
         <ul class="navbar-nav">
-          <li class="nav-item  active ">
-            <a class="nav-link " href="../index.html">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.php">
               <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
-          </li>
+            </li>
           <li class="nav-item">
-            <a class="nav-link " href="../examples/icons.html">
-              <i class="ni ni-planet text-blue"></i> Icons
+            <a class="nav-link" href="scanner.php">
+              <i class="ni ni-camera-compact text-pink"></i> Scanner
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../examples/maps.html">
-              <i class="ni ni-pin-3 text-orange"></i> Maps
+            <a class="nav-link" href="prediction.php">
+              <i class="ni ni-sound-wave text-orange"></i> Prediction
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link  active " href="../examples/profile.html">
-              <i class="ni ni-single-02 text-yellow"></i> User profile
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="../examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-red"></i> Tables
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/login.html">
-              <i class="ni ni-key-25 text-info"></i> Login
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/register.html">
-              <i class="ni ni-circle-08 text-pink"></i> Register
+          <li class="nav-item active">
+            <a class="nav-link active" href="history.php">
+              <i class="ni ni-book-bookmark text-yellow"></i> History
             </a>
           </li>
         </ul>
@@ -168,25 +153,13 @@
         <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-              <i class="ni ni-spaceship"></i> Getting started
+            <a class="nav-link" href="../additional/login.html">
+              <i class="ni ni-key-25 text-info"></i> Login
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-              <i class="ni ni-palette"></i> Foundation
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-              <i class="ni ni-ui-04"></i> Components
-            </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item active active-pro">
-            <a class="nav-link" href="../examples/upgrade.html">
-              <i class="ni ni-send text-dark"></i> Upgrade to PRO
+            <a class="nav-link" href="../additional/register.html">
+              <i class="ni ni-circle-08 text-pink"></i> Register
             </a>
           </li>
         </ul>
@@ -198,7 +171,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">User Profile</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="history.php">History</a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -227,19 +200,19 @@
               <div class=" dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Welcome!</h6>
               </div>
-              <a href="../examples/profile.html" class="dropdown-item">
+              <a href="../additional/profile.html" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>My profile</span>
               </a>
-              <a href="../examples/profile.html" class="dropdown-item">
+              <a href="../additional/profile.html" class="dropdown-item">
                 <i class="ni ni-settings-gear-65"></i>
                 <span>Settings</span>
               </a>
-              <a href="../examples/profile.html" class="dropdown-item">
+              <a href="../additional/profile.html" class="dropdown-item">
                 <i class="ni ni-calendar-grid-58"></i>
                 <span>Activity</span>
               </a>
-              <a href="../examples/profile.html" class="dropdown-item">
+              <a href="../additional/profile.html" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
                 <span>Support</span>
               </a>
