@@ -427,7 +427,10 @@
                       }
 
                       // Tombol halaman
-                      for ($i = 1; $i <= $total_pages; $i++) {
+                      $start_page = max(1, $page - 2);
+                      $end_page = min($total_pages, $start_page + 4);
+
+                      for ($i = $start_page; $i <= $end_page; $i++) {
                         // Menentukan kelas CSS untuk nomor halaman saat ini
                         $active_class = ($i == $page) ? 'active' : '';
 
@@ -444,6 +447,8 @@
                       } else {
                         echo "<li class='page disabled'><span class='page-link'>Next <i class='fas fa-chevron-right'></i></span></li>";
                       }
+
+
 
                       // Tutup koneksi
                       mysqli_close($koneksi);
