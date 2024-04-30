@@ -1,0 +1,631 @@
+receipt_id,user_name,category_name,product_name,product_price,date
+1,Agus Santoso,Electronics,Smartphone,5000000.00,2024-04-01
+1,Agus Santoso,Clothing,T-Shirt,200000.00,2024-04-01
+100,Agus Santoso,Clothing,Sweater,400000.00,2024-05-05
+100,Agus Santoso,Health,Gym Membership,500000.00,2024-05-05
+101,Agus Santoso,Books,Coloring Book,60000.00,2024-05-06
+101,Agus Santoso,Traffic,Car Insurance,200000.00,2024-05-06
+102,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-05-06
+102,Agus Santoso,Traffic,Parking Fine,60000.00,2024-05-06
+103,Agus Santoso,Games,Board Game,250000.00,2024-05-07
+103,Agus Santoso,Traffic,Toll Booth Fee,20000.00,2024-05-07
+104,Agus Santoso,Electronics,Smart TV,8000000.00,2024-05-07
+104,Agus Santoso,Traffic,Petrol,150000.00,2024-05-07
+105,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-05-08
+105,Agus Santoso,Traffic,Bus Fare,15000.00,2024-05-08
+106,Agus Santoso,Books,Cooking Guide,120000.00,2024-05-08
+106,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-05-08
+107,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-05-09
+107,Agus Santoso,Traffic,Toll Road Charge,30000.00,2024-05-09
+108,Agus Santoso,Games,Chess Set,100000.00,2024-05-09
+108,Agus Santoso,Traffic,Metro Ticket,20000.00,2024-05-09
+109,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-05-10
+109,Agus Santoso,Traffic,Train Fare,50000.00,2024-05-10
+110,Agus Santoso,Clothing,Skirt,350000.00,2024-05-10
+110,Agus Santoso,Traffic,Bridge Toll,60000.00,2024-05-10
+111,Agus Santoso,Books,Adventure Novel,80000.00,2024-05-11
+111,Agus Santoso,Traffic,Traffic Fines,100000.00,2024-05-11
+112,Agus Santoso,Furniture,Bookshelf,800000.00,2024-05-11
+112,Agus Santoso,Traffic,Parking Fee,50000.00,2024-05-11
+113,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-05-12
+113,Agus Santoso,Traffic,Gasoline,60000.00,2024-05-12
+114,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-05-12
+114,Agus Santoso,Traffic,Expressway Toll,100000.00,2024-05-12
+115,Agus Santoso,Clothing,Sweater,400000.00,2024-05-13
+115,Agus Santoso,Traffic,Road Tax,80000.00,2024-05-13
+116,Agus Santoso,Books,Coloring Book,60000.00,2024-05-13
+116,Agus Santoso,Traffic,Parking Ticket,20000.00,2024-05-13
+117,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-05-14
+117,Agus Santoso,Traffic,Bus Fare,15000.00,2024-05-14
+118,Agus Santoso,Games,Board Game,250000.00,2024-05-14
+118,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-05-14
+119,Agus Santoso,Electronics,Smart TV,8000000.00,2024-05-15
+119,Agus Santoso,Traffic,Metro Ticket,20000.00,2024-05-15
+120,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-05-15
+120,Agus Santoso,Traffic,Bridge Toll,60000.00,2024-05-15
+121,Agus Santoso,Other,Miscellaneous Item,75000.00,2024-05-16
+121,Agus Santoso,Traffic,Parking Fee,20000.00,2024-05-16
+122,Agus Santoso,Games,Rubik's Cube,80000.00,2024-05-16
+122,Agus Santoso,Traffic,Toll Road Charge,30000.00,2024-05-16
+123,Agus Santoso,Books,Science Fiction Book,100000.00,2024-05-17
+123,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-05-17
+124,Agus Santoso,Furniture,Office Chair,1200000.00,2024-05-17
+124,Agus Santoso,Traffic,Bridge Toll,60000.00,2024-05-17
+125,Agus Santoso,Games,Card Game,70000.00,2024-05-18
+125,Agus Santoso,Traffic,Gasoline,80000.00,2024-05-18
+126,Agus Santoso,Electronics,Smartphone Screen Protector,100000.00,2024-05-18
+126,Agus Santoso,Traffic,Parking Ticket,100000.00,2024-05-18
+127,Agus Santoso,Clothing,Jeans,250000.00,2024-05-19
+127,Agus Santoso,Traffic,Road Tax,70000.00,2024-05-19
+128,Agus Santoso,Books,Fantasy Book,90000.00,2024-05-19
+128,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-05-19
+129,Agus Santoso,Furniture,Bookcase,900000.00,2024-05-20
+129,Agus Santoso,Traffic,Bus Fare,15000.00,2024-05-20
+130,Agus Santoso,Games,Card Game,70000.00,2024-05-20
+130,Agus Santoso,Traffic,Train Fare,50000.00,2024-05-20
+131,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-05-21
+131,Agus Santoso,Traffic,Bridge Toll,60000.00,2024-05-21
+132,Agus Santoso,Clothing,Dress,300000.00,2024-05-21
+132,Agus Santoso,Traffic,Parking Fee,20000.00,2024-05-21
+133,Agus Santoso,Books,Mystery Book,85000.00,2024-05-22
+133,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-05-22
+134,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-05-22
+134,Agus Santoso,Traffic,Parking Ticket,100000.00,2024-05-22
+135,Agus Santoso,Games,Puzzle,60000.00,2024-05-23
+135,Agus Santoso,Traffic,Traffic Fines,120000.00,2024-05-23
+136,Agus Santoso,Electronics,Phone Case,100000.00,2024-05-23
+136,Agus Santoso,Traffic,Expressway Toll,80000.00,2024-05-23
+137,Agus Santoso,Clothing,Skirt,350000.00,2024-05-24
+137,Agus Santoso,Traffic,Metro Ticket,20000.00,2024-05-24
+138,Agus Santoso,Books,Romance Novel,75000.00,2024-05-24
+138,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-05-24
+139,Agus Santoso,Furniture,Desk,800000.00,2024-05-25
+139,Agus Santoso,Traffic,Toll Booth Fee,30000.00,2024-05-25
+140,Agus Santoso,Games,Board Game,250000.00,2024-05-25
+140,Agus Santoso,Traffic,Fuel,50000.00,2024-05-25
+141,Agus Santoso,Electronics,Smartwatch Charger,120000.00,2024-05-26
+141,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-05-26
+142,Agus Santoso,Clothing,T-Shirt,200000.00,2024-05-26
+142,Agus Santoso,Traffic,Parking Fee,20000.00,2024-05-26
+143,Agus Santoso,Books,Thriller Book,95000.00,2024-05-27
+143,Agus Santoso,Traffic,Traffic Ticket,100000.00,2024-05-27
+144,Agus Santoso,Furniture,Shelving Unit,1500000.00,2024-05-27
+144,Agus Santoso,Traffic,Road Tax,80000.00,2024-05-27
+145,Agus Santoso,Games,Chess Set,90000.00,2024-05-28
+145,Agus Santoso,Traffic,Bus Fare,15000.00,2024-05-28
+151,Agus Santoso,Electronics,Earbuds,120000.00,2024-06-01
+151,Agus Santoso,Traffic,Parking Fee,20000.00,2024-06-01
+152,Agus Santoso,Games,Puzzle,60000.00,2024-06-01
+152,Agus Santoso,Traffic,Toll Booth Fee,30000.00,2024-06-01
+153,Agus Santoso,Books,Science Fiction Book,100000.00,2024-06-02
+153,Agus Santoso,Traffic,Expressway Toll,80000.00,2024-06-02
+154,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-06-02
+154,Agus Santoso,Traffic,Parking Ticket,100000.00,2024-06-02
+155,Agus Santoso,Games,Chess Set,90000.00,2024-06-03
+155,Agus Santoso,Traffic,Traffic Fines,120000.00,2024-06-03
+156,Agus Santoso,Electronics,Phone Case,100000.00,2024-06-03
+156,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-06-03
+157,Agus Santoso,Clothing,Skirt,350000.00,2024-06-04
+157,Agus Santoso,Traffic,Metro Ticket,20000.00,2024-06-04
+158,Agus Santoso,Books,Romance Novel,75000.00,2024-06-04
+158,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-06-04
+159,Agus Santoso,Furniture,Desk,800000.00,2024-06-05
+159,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-06-05
+160,Agus Santoso,Games,Board Game,250000.00,2024-06-05
+160,Agus Santoso,Traffic,Fuel,50000.00,2024-06-05
+161,Agus Santoso,Electronics,Smartwatch Charger,120000.00,2024-06-06
+161,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-06-06
+162,Agus Santoso,Clothing,T-Shirt,200000.00,2024-06-06
+162,Agus Santoso,Traffic,Parking Fee,20000.00,2024-06-06
+163,Agus Santoso,Books,Thriller Book,95000.00,2024-06-07
+163,Agus Santoso,Traffic,Traffic Ticket,100000.00,2024-06-07
+164,Agus Santoso,Furniture,Shelving Unit,1500000.00,2024-06-07
+164,Agus Santoso,Traffic,Road Tax,80000.00,2024-06-07
+165,Agus Santoso,Games,Rubik's Cube,80000.00,2024-06-08
+165,Agus Santoso,Traffic,Bus Fare,15000.00,2024-06-08
+166,Agus Santoso,Electronics,Smartphone Screen Protector,100000.00,2024-06-08
+166,Agus Santoso,Traffic,Bridge Toll,60000.00,2024-06-08
+167,Agus Santoso,Clothing,Jeans,250000.00,2024-06-09
+167,Agus Santoso,Traffic,Road Tax,70000.00,2024-06-09
+168,Agus Santoso,Books,Fantasy Book,90000.00,2024-06-09
+168,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-06-09
+169,Agus Santoso,Furniture,Bookcase,900000.00,2024-06-10
+169,Agus Santoso,Traffic,Bus Fare,15000.00,2024-06-10
+170,Agus Santoso,Games,Card Game,70000.00,2024-06-10
+170,Agus Santoso,Traffic,Train Fare,50000.00,2024-06-10
+171,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-06-11
+171,Agus Santoso,Traffic,Bridge Toll,60000.00,2024-06-11
+172,Agus Santoso,Clothing,Dress,300000.00,2024-06-11
+172,Agus Santoso,Traffic,Parking Fee,20000.00,2024-06-11
+173,Agus Santoso,Books,Mystery Book,85000.00,2024-06-12
+173,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-06-12
+174,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-06-12
+174,Agus Santoso,Traffic,Parking Ticket,100000.00,2024-06-12
+175,Agus Santoso,Games,Puzzle,60000.00,2024-06-13
+175,Agus Santoso,Traffic,Traffic Fines,120000.00,2024-06-13
+176,Agus Santoso,Electronics,Phone Case,100000.00,2024-06-13
+176,Agus Santoso,Traffic,Expressway Toll,80000.00,2024-06-13
+177,Agus Santoso,Clothing,Skirt,350000.00,2024-06-14
+177,Agus Santoso,Traffic,Metro Ticket,20000.00,2024-06-14
+178,Agus Santoso,Books,Romance Novel,75000.00,2024-06-14
+178,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-06-14
+179,Agus Santoso,Furniture,Desk,800000.00,2024-06-15
+179,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-06-15
+180,Agus Santoso,Games,Board Game,250000.00,2024-06-15
+180,Agus Santoso,Traffic,Fuel,50000.00,2024-06-15
+181,Agus Santoso,Electronics,Bluetooth Speaker,150000.00,2024-06-16
+181,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-06-16
+182,Agus Santoso,Games,Action Figure,70000.00,2024-06-16
+182,Agus Santoso,Traffic,Parking Fee,20000.00,2024-06-16
+183,Agus Santoso,Books,Drama Book,80000.00,2024-06-17
+183,Agus Santoso,Traffic,Traffic Fines,120000.00,2024-06-17
+184,Agus Santoso,Furniture,Sofa,2000000.00,2024-06-17
+184,Agus Santoso,Traffic,Expressway Toll,80000.00,2024-06-17
+185,Agus Santoso,Games,LEGO,200000.00,2024-06-18
+185,Agus Santoso,Traffic,Parking Ticket,100000.00,2024-06-18
+186,Agus Santoso,Electronics,Smartwatch,1500000.00,2024-06-18
+186,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-06-18
+187,Agus Santoso,Clothing,Skirt,350000.00,2024-06-19
+187,Agus Santoso,Traffic,Metro Ticket,20000.00,2024-06-19
+188,Agus Santoso,Books,Self-help Book,120000.00,2024-06-19
+188,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-06-19
+189,Agus Santoso,Furniture,Bookshelf,800000.00,2024-06-20
+189,Agus Santoso,Traffic,Parking Fee,20000.00,2024-06-20
+190,Agus Santoso,Games,Puzzle,150000.00,2024-06-20
+190,Agus Santoso,Traffic,Toll Booth Fee,30000.00,2024-06-20
+191,Agus Santoso,Electronics,Smartphone Case,80000.00,2024-06-21
+191,Agus Santoso,Traffic,Public Transport Fare,50000.00,2024-06-21
+192,Agus Santoso,Clothing,Dress,300000.00,2024-06-21
+192,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-06-21
+193,Agus Santoso,Books,Mystery Book,85000.00,2024-06-22
+193,Agus Santoso,Traffic,Traffic Ticket,100000.00,2024-06-22
+194,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-06-22
+194,Agus Santoso,Traffic,Parking Ticket,100000.00,2024-06-22
+195,Agus Santoso,Games,Board Game,250000.00,2024-06-23
+195,Agus Santoso,Traffic,Fuel,50000.00,2024-06-23
+196,Agus Santoso,Electronics,Phone Case,100000.00,2024-06-23
+196,Agus Santoso,Traffic,Expressway Toll,80000.00,2024-06-23
+197,Agus Santoso,Clothing,Skirt,350000.00,2024-06-24
+197,Agus Santoso,Traffic,Metro Ticket,20000.00,2024-06-24
+198,Agus Santoso,Books,Romance Novel,75000.00,2024-06-24
+198,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-06-24
+199,Agus Santoso,Furniture,Desk,800000.00,2024-06-25
+199,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-06-25
+200,Agus Santoso,Games,Board Game,250000.00,2024-06-25
+200,Agus Santoso,Traffic,Fuel,50000.00,2024-06-25
+201,Agus Santoso,Electronics,Headphones,500000.00,2024-06-26
+201,Agus Santoso,Traffic,Expressway Toll,80000.00,2024-06-26
+202,Agus Santoso,Clothing,Jeans,250000.00,2024-06-26
+202,Agus Santoso,Traffic,Road Tax,70000.00,2024-06-26
+203,Agus Santoso,Books,Fantasy Book,90000.00,2024-06-27
+203,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-06-27
+204,Agus Santoso,Furniture,Bookcase,900000.00,2024-06-27
+204,Agus Santoso,Traffic,Bus Fare,15000.00,2024-06-27
+205,Agus Santoso,Games,Card Game,70000.00,2024-06-28
+205,Agus Santoso,Traffic,Train Fare,50000.00,2024-06-28
+206,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-06-28
+206,Agus Santoso,Traffic,Bridge Toll,60000.00,2024-06-28
+207,Agus Santoso,Clothing,Jeans,250000.00,2024-06-29
+207,Agus Santoso,Traffic,Road Tax,70000.00,2024-06-29
+208,Agus Santoso,Books,Fantasy Book,90000.00,2024-06-29
+208,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-06-29
+209,Agus Santoso,Furniture,Bookcase,900000.00,2024-06-30
+209,Agus Santoso,Traffic,Bus Fare,15000.00,2024-06-30
+210,Agus Santoso,Games,Card Game,70000.00,2024-06-30
+210,Agus Santoso,Traffic,Train Fare,50000.00,2024-06-30
+211,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-09-16
+211,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-09-16
+212,Agus Santoso,Clothing,Dress,300000.00,2024-09-16
+212,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-09-16
+213,Agus Santoso,Books,Romance Novel,75000.00,2024-09-17
+213,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-09-17
+214,Agus Santoso,Furniture,Desk,800000.00,2024-09-17
+214,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-09-17
+215,Agus Santoso,Games,Board Game,250000.00,2024-09-18
+215,Agus Santoso,Traffic,Fuel,50000.00,2024-09-18
+216,Agus Santoso,Electronics,Smartphone Case,80000.00,2024-09-18
+216,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-09-18
+217,Agus Santoso,Clothing,Jeans,250000.00,2024-09-19
+217,Agus Santoso,Traffic,Road Tax,70000.00,2024-09-19
+218,Agus Santoso,Books,Fantasy Book,90000.00,2024-09-19
+218,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-09-19
+219,Agus Santoso,Furniture,Bookcase,900000.00,2024-09-20
+219,Agus Santoso,Traffic,Bus Fare,15000.00,2024-09-20
+220,Agus Santoso,Games,Card Game,70000.00,2024-09-20
+220,Agus Santoso,Traffic,Train Fare,50000.00,2024-09-20
+221,Agus Santoso,Electronics,Headphones,500000.00,2024-09-21
+221,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-09-21
+222,Agus Santoso,Clothing,Jeans,250000.00,2024-09-21
+222,Agus Santoso,Traffic,Road Tax,70000.00,2024-09-21
+223,Agus Santoso,Books,Fantasy Book,90000.00,2024-09-22
+223,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-09-22
+224,Agus Santoso,Furniture,Bookcase,900000.00,2024-09-22
+224,Agus Santoso,Traffic,Bus Fare,15000.00,2024-09-22
+225,Agus Santoso,Games,Card Game,70000.00,2024-09-23
+225,Agus Santoso,Traffic,Train Fare,50000.00,2024-09-23
+226,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-09-23
+226,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-09-23
+227,Agus Santoso,Clothing,Dress,300000.00,2024-09-24
+227,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-09-24
+228,Agus Santoso,Books,Romance Novel,75000.00,2024-09-24
+228,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-09-24
+229,Agus Santoso,Furniture,Desk,800000.00,2024-09-25
+229,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-09-25
+230,Agus Santoso,Games,Board Game,250000.00,2024-09-25
+230,Agus Santoso,Traffic,Fuel,50000.00,2024-09-25
+231,Agus Santoso,Electronics,Smartphone Case,80000.00,2024-09-26
+231,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-09-26
+232,Agus Santoso,Clothing,Jeans,250000.00,2024-09-26
+232,Agus Santoso,Traffic,Road Tax,70000.00,2024-09-26
+233,Agus Santoso,Books,Fantasy Book,90000.00,2024-09-27
+233,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-09-27
+234,Agus Santoso,Furniture,Bookcase,900000.00,2024-09-27
+234,Agus Santoso,Traffic,Bus Fare,15000.00,2024-09-27
+235,Agus Santoso,Games,Card Game,70000.00,2024-09-28
+235,Agus Santoso,Traffic,Train Fare,50000.00,2024-09-28
+236,Agus Santoso,Electronics,Headphones,500000.00,2024-09-28
+236,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-09-28
+237,Agus Santoso,Clothing,Jeans,250000.00,2024-09-29
+237,Agus Santoso,Traffic,Road Tax,70000.00,2024-09-29
+238,Agus Santoso,Books,Fantasy Book,90000.00,2024-09-29
+238,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-09-29
+239,Agus Santoso,Furniture,Bookcase,900000.00,2024-09-30
+239,Agus Santoso,Traffic,Bus Fare,15000.00,2024-09-30
+240,Agus Santoso,Games,Card Game,70000.00,2024-09-30
+240,Agus Santoso,Traffic,Train Fare,50000.00,2024-09-30
+241,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-10-01
+241,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-01
+242,Agus Santoso,Clothing,Dress,300000.00,2024-10-01
+242,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-01
+243,Agus Santoso,Books,Romance Novel,75000.00,2024-10-02
+243,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-10-02
+244,Agus Santoso,Furniture,Desk,800000.00,2024-10-02
+244,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-02
+245,Agus Santoso,Games,Board Game,250000.00,2024-10-03
+245,Agus Santoso,Traffic,Fuel,50000.00,2024-10-03
+246,Agus Santoso,Electronics,Smartphone Case,80000.00,2024-10-03
+246,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-03
+247,Agus Santoso,Clothing,Jeans,250000.00,2024-10-04
+247,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-04
+248,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-04
+248,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-04
+249,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-05
+249,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-05
+250,Agus Santoso,Games,Card Game,70000.00,2024-10-05
+250,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-05
+251,Agus Santoso,Electronics,Headphones,500000.00,2024-10-06
+251,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-06
+252,Agus Santoso,Clothing,Jeans,250000.00,2024-10-06
+252,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-06
+253,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-07
+253,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-07
+254,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-07
+254,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-07
+255,Agus Santoso,Games,Card Game,70000.00,2024-10-08
+255,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-08
+256,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-10-08
+256,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-08
+257,Agus Santoso,Clothing,Dress,300000.00,2024-10-09
+257,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-09
+258,Agus Santoso,Books,Romance Novel,75000.00,2024-10-09
+258,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-10-09
+259,Agus Santoso,Furniture,Desk,800000.00,2024-10-10
+259,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-10
+260,Agus Santoso,Games,Board Game,250000.00,2024-10-10
+260,Agus Santoso,Traffic,Fuel,50000.00,2024-10-10
+261,Agus Santoso,Electronics,Smartphone Case,80000.00,2024-10-11
+261,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-11
+262,Agus Santoso,Clothing,Jeans,250000.00,2024-10-11
+262,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-11
+263,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-12
+263,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-12
+264,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-12
+264,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-12
+265,Agus Santoso,Games,Card Game,70000.00,2024-10-13
+265,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-13
+266,Agus Santoso,Electronics,Headphones,500000.00,2024-10-13
+266,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-13
+267,Agus Santoso,Clothing,Jeans,250000.00,2024-10-14
+267,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-14
+268,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-14
+268,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-14
+269,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-15
+269,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-15
+270,Agus Santoso,Games,Card Game,70000.00,2024-10-15
+270,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-15
+271,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-10-16
+271,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-16
+271,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-10-16
+271,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-16
+272,Agus Santoso,Clothing,Dress,300000.00,2024-10-16
+272,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-16
+272,Agus Santoso,Clothing,Dress,300000.00,2024-10-16
+272,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-16
+273,Agus Santoso,Books,Romance Novel,75000.00,2024-10-17
+273,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-10-17
+273,Agus Santoso,Books,Romance Novel,75000.00,2024-10-17
+273,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-10-17
+274,Agus Santoso,Furniture,Desk,800000.00,2024-10-17
+274,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-17
+274,Agus Santoso,Furniture,Desk,800000.00,2024-10-17
+274,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-17
+275,Agus Santoso,Games,Board Game,250000.00,2024-10-18
+275,Agus Santoso,Traffic,Fuel,50000.00,2024-10-18
+275,Agus Santoso,Games,Board Game,250000.00,2024-10-18
+275,Agus Santoso,Traffic,Fuel,50000.00,2024-10-18
+276,Agus Santoso,Electronics,Smartphone Case,80000.00,2024-10-18
+276,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-18
+277,Agus Santoso,Clothing,Jeans,250000.00,2024-10-19
+277,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-19
+278,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-19
+278,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-19
+279,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-20
+279,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-20
+280,Agus Santoso,Games,Card Game,70000.00,2024-10-20
+280,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-20
+281,Agus Santoso,Electronics,Headphones,500000.00,2024-10-21
+281,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-21
+282,Agus Santoso,Clothing,Jeans,250000.00,2024-10-21
+282,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-21
+283,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-22
+283,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-22
+284,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-22
+284,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-22
+285,Agus Santoso,Games,Card Game,70000.00,2024-10-23
+285,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-23
+286,Agus Santoso,Electronics,Smartphone Charger,80000.00,2024-10-23
+286,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-23
+287,Agus Santoso,Clothing,Dress,300000.00,2024-10-24
+287,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-24
+288,Agus Santoso,Books,Romance Novel,75000.00,2024-10-24
+288,Agus Santoso,Traffic,Taxi Fare,80000.00,2024-10-24
+289,Agus Santoso,Furniture,Desk,800000.00,2024-10-25
+289,Agus Santoso,Traffic,Toll Road Charge,60000.00,2024-10-25
+290,Agus Santoso,Games,Board Game,250000.00,2024-10-25
+290,Agus Santoso,Traffic,Fuel,50000.00,2024-10-25
+291,Agus Santoso,Electronics,Smartphone Case,80000.00,2024-10-26
+291,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-26
+292,Agus Santoso,Clothing,Jeans,250000.00,2024-10-26
+292,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-26
+293,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-27
+293,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-27
+294,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-27
+294,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-27
+295,Agus Santoso,Games,Card Game,70000.00,2024-10-28
+295,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-28
+296,Agus Santoso,Electronics,Headphones,500000.00,2024-10-28
+296,Agus Santoso,Traffic,Expressway Toll,60000.00,2024-10-28
+297,Agus Santoso,Clothing,Jeans,250000.00,2024-10-29
+297,Agus Santoso,Traffic,Road Tax,70000.00,2024-10-29
+298,Agus Santoso,Books,Fantasy Book,90000.00,2024-10-29
+298,Agus Santoso,Traffic,Traffic Fine,100000.00,2024-10-29
+299,Agus Santoso,Furniture,Bookcase,900000.00,2024-10-30
+299,Agus Santoso,Traffic,Bus Fare,15000.00,2024-10-30
+300,Agus Santoso,Games,Card Game,70000.00,2024-10-30
+300,Agus Santoso,Traffic,Train Fare,50000.00,2024-10-30
+31,Agus Santoso,Electronics,Smart TV,8000000.00,2024-04-01
+31,Agus Santoso,Foods,Burger,50000.00,2024-04-01
+31,Agus Santoso,Electronics,Smart TV,8000000.00,2024-04-01
+31,Agus Santoso,Foods,Burger,50000.00,2024-04-01
+32,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-04-01
+32,Agus Santoso,Foods,Salad,30000.00,2024-04-01
+32,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-04-01
+32,Agus Santoso,Foods,Salad,30000.00,2024-04-01
+33,Agus Santoso,Books,Cooking Guide,120000.00,2024-04-01
+33,Agus Santoso,Foods,Sandwich,25000.00,2024-04-01
+33,Agus Santoso,Books,Cooking Guide,120000.00,2024-04-01
+33,Agus Santoso,Foods,Sandwich,25000.00,2024-04-01
+34,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-04-02
+34,Agus Santoso,Foods,Pizza,75000.00,2024-04-02
+34,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-04-02
+34,Agus Santoso,Foods,Pizza,75000.00,2024-04-02
+35,Agus Santoso,Games,Chess Set,100000.00,2024-04-02
+35,Agus Santoso,Foods,Ice Cream,30000.00,2024-04-02
+35,Agus Santoso,Games,Chess Set,100000.00,2024-04-02
+35,Agus Santoso,Foods,Ice Cream,30000.00,2024-04-02
+36,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-04-02
+36,Agus Santoso,Foods,Sushi,80000.00,2024-04-02
+36,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-04-02
+36,Agus Santoso,Foods,Sushi,80000.00,2024-04-02
+37,Agus Santoso,Clothing,Skirt,350000.00,2024-04-03
+37,Agus Santoso,Foods,Smoothie,40000.00,2024-04-03
+37,Agus Santoso,Clothing,Skirt,350000.00,2024-04-03
+37,Agus Santoso,Foods,Smoothie,40000.00,2024-04-03
+38,Agus Santoso,Books,Adventure Novel,80000.00,2024-04-03
+38,Agus Santoso,Foods,Fried Chicken,45000.00,2024-04-03
+38,Agus Santoso,Books,Adventure Novel,80000.00,2024-04-03
+38,Agus Santoso,Foods,Fried Chicken,45000.00,2024-04-03
+39,Agus Santoso,Furniture,Bookshelf,800000.00,2024-04-03
+39,Agus Santoso,Foods,Pasta,60000.00,2024-04-03
+39,Agus Santoso,Furniture,Bookshelf,800000.00,2024-04-03
+39,Agus Santoso,Foods,Pasta,60000.00,2024-04-03
+40,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-04-04
+40,Agus Santoso,Foods,Fruit Salad,40000.00,2024-04-04
+40,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-04-04
+40,Agus Santoso,Foods,Fruit Salad,40000.00,2024-04-04
+41,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-04-04
+41,Agus Santoso,Foods,Soup,35000.00,2024-04-04
+41,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-04-04
+41,Agus Santoso,Foods,Soup,35000.00,2024-04-04
+42,Agus Santoso,Clothing,Sweater,400000.00,2024-04-04
+42,Agus Santoso,Foods,Taco,45000.00,2024-04-04
+42,Agus Santoso,Clothing,Sweater,400000.00,2024-04-04
+42,Agus Santoso,Foods,Taco,45000.00,2024-04-04
+43,Agus Santoso,Books,Coloring Book,60000.00,2024-04-05
+43,Agus Santoso,Foods,French Fries,25000.00,2024-04-05
+43,Agus Santoso,Books,Coloring Book,60000.00,2024-04-05
+43,Agus Santoso,Foods,French Fries,25000.00,2024-04-05
+44,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-04-05
+44,Agus Santoso,Foods,Baklava,50000.00,2024-04-05
+44,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-04-05
+44,Agus Santoso,Foods,Baklava,50000.00,2024-04-05
+45,Agus Santoso,Games,Board Game,250000.00,2024-04-05
+45,Agus Santoso,Foods,Cereal,30000.00,2024-04-05
+45,Agus Santoso,Games,Board Game,250000.00,2024-04-05
+45,Agus Santoso,Foods,Cereal,30000.00,2024-04-05
+46,Agus Santoso,Electronics,Smart TV,8000000.00,2024-04-06
+46,Agus Santoso,Foods,Burger,50000.00,2024-04-06
+46,Agus Santoso,Electronics,Smart TV,8000000.00,2024-04-06
+46,Agus Santoso,Foods,Burger,50000.00,2024-04-06
+47,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-04-06
+47,Agus Santoso,Foods,Salad,30000.00,2024-04-06
+47,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-04-06
+47,Agus Santoso,Foods,Salad,30000.00,2024-04-06
+48,Agus Santoso,Books,Cooking Guide,120000.00,2024-04-06
+48,Agus Santoso,Foods,Sandwich,25000.00,2024-04-06
+48,Agus Santoso,Books,Cooking Guide,120000.00,2024-04-06
+48,Agus Santoso,Foods,Sandwich,25000.00,2024-04-06
+49,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-04-07
+49,Agus Santoso,Foods,Pizza,75000.00,2024-04-07
+49,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-04-07
+49,Agus Santoso,Foods,Pizza,75000.00,2024-04-07
+50,Agus Santoso,Foods,Ice Cream,30000.00,2024-04-07
+50,Agus Santoso,Games,Chess Set,100000.00,2024-04-07
+50,Agus Santoso,Foods,Ice Cream,30000.00,2024-04-07
+50,Agus Santoso,Games,Chess Set,100000.00,2024-04-07
+51,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-04-07
+51,Agus Santoso,Foods,Sushi,80000.00,2024-04-07
+51,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-04-07
+51,Agus Santoso,Foods,Sushi,80000.00,2024-04-07
+52,Agus Santoso,Clothing,Skirt,350000.00,2024-04-08
+52,Agus Santoso,Foods,Smoothie,40000.00,2024-04-08
+52,Agus Santoso,Clothing,Skirt,350000.00,2024-04-08
+52,Agus Santoso,Foods,Smoothie,40000.00,2024-04-08
+53,Agus Santoso,Books,Adventure Novel,80000.00,2024-04-08
+53,Agus Santoso,Foods,Fried Chicken,45000.00,2024-04-08
+53,Agus Santoso,Books,Adventure Novel,80000.00,2024-04-08
+53,Agus Santoso,Foods,Fried Chicken,45000.00,2024-04-08
+54,Agus Santoso,Furniture,Bookshelf,800000.00,2024-04-08
+54,Agus Santoso,Foods,Pasta,60000.00,2024-04-08
+54,Agus Santoso,Furniture,Bookshelf,800000.00,2024-04-08
+54,Agus Santoso,Foods,Pasta,60000.00,2024-04-08
+55,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-04-09
+55,Agus Santoso,Foods,Fruit Salad,40000.00,2024-04-09
+55,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-04-09
+55,Agus Santoso,Foods,Fruit Salad,40000.00,2024-04-09
+56,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-04-09
+56,Agus Santoso,Foods,Soup,35000.00,2024-04-09
+56,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-04-09
+56,Agus Santoso,Foods,Soup,35000.00,2024-04-09
+57,Agus Santoso,Clothing,Sweater,400000.00,2024-04-09
+57,Agus Santoso,Foods,Taco,45000.00,2024-04-09
+57,Agus Santoso,Clothing,Sweater,400000.00,2024-04-09
+57,Agus Santoso,Foods,Taco,45000.00,2024-04-09
+58,Agus Santoso,Books,Coloring Book,60000.00,2024-04-10
+58,Agus Santoso,Foods,French Fries,25000.00,2024-04-10
+58,Agus Santoso,Books,Coloring Book,60000.00,2024-04-10
+58,Agus Santoso,Foods,French Fries,25000.00,2024-04-10
+59,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-04-10
+59,Agus Santoso,Foods,Baklava,50000.00,2024-04-10
+59,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-04-10
+59,Agus Santoso,Foods,Baklava,50000.00,2024-04-10
+60,Agus Santoso,Games,Board Game,250000.00,2024-04-10
+60,Agus Santoso,Foods,Cereal,30000.00,2024-04-10
+60,Agus Santoso,Games,Board Game,250000.00,2024-04-10
+60,Agus Santoso,Foods,Cereal,30000.00,2024-04-10
+61,Agus Santoso,Electronics,Smart TV,8000000.00,2024-04-16
+61,Agus Santoso,Foods,Burger,50000.00,2024-04-16
+62,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-04-16
+62,Agus Santoso,Foods,Salad,30000.00,2024-04-16
+63,Agus Santoso,Books,Cooking Guide,120000.00,2024-04-17
+63,Agus Santoso,Foods,Sandwich,25000.00,2024-04-17
+64,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-04-17
+64,Agus Santoso,Foods,Pizza,75000.00,2024-04-17
+65,Agus Santoso,Games,Chess Set,100000.00,2024-04-18
+65,Agus Santoso,Foods,Ice Cream,30000.00,2024-04-18
+66,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-04-18
+66,Agus Santoso,Foods,Sushi,80000.00,2024-04-18
+67,Agus Santoso,Clothing,Skirt,350000.00,2024-04-19
+67,Agus Santoso,Foods,Smoothie,40000.00,2024-04-19
+68,Agus Santoso,Books,Adventure Novel,80000.00,2024-04-19
+68,Agus Santoso,Foods,Fried Chicken,45000.00,2024-04-19
+69,Agus Santoso,Furniture,Bookshelf,800000.00,2024-04-20
+69,Agus Santoso,Foods,Pasta,60000.00,2024-04-20
+70,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-04-20
+70,Agus Santoso,Foods,Fruit Salad,40000.00,2024-04-20
+71,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-04-21
+71,Agus Santoso,Foods,Soup,35000.00,2024-04-21
+72,Agus Santoso,Clothing,Sweater,400000.00,2024-04-21
+72,Agus Santoso,Foods,Taco,45000.00,2024-04-21
+73,Agus Santoso,Books,Coloring Book,60000.00,2024-04-22
+73,Agus Santoso,Foods,French Fries,25000.00,2024-04-22
+74,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-04-22
+74,Agus Santoso,Foods,Baklava,50000.00,2024-04-22
+75,Agus Santoso,Games,Board Game,250000.00,2024-04-23
+75,Agus Santoso,Foods,Cereal,30000.00,2024-04-23
+76,Agus Santoso,Electronics,Smart TV,8000000.00,2024-04-23
+76,Agus Santoso,Foods,Burger,50000.00,2024-04-23
+77,Agus Santoso,Clothing,Dress Shirt,300000.00,2024-04-24
+77,Agus Santoso,Foods,Salad,30000.00,2024-04-24
+78,Agus Santoso,Books,Cooking Guide,120000.00,2024-04-24
+78,Agus Santoso,Foods,Sandwich,25000.00,2024-04-24
+79,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-04-25
+79,Agus Santoso,Foods,Pizza,75000.00,2024-04-25
+80,Agus Santoso,Games,Chess Set,100000.00,2024-04-25
+80,Agus Santoso,Foods,Ice Cream,30000.00,2024-04-25
+81,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-04-26
+81,Agus Santoso,Foods,Sushi,80000.00,2024-04-26
+82,Agus Santoso,Clothing,Skirt,350000.00,2024-04-26
+82,Agus Santoso,Foods,Smoothie,40000.00,2024-04-26
+83,Agus Santoso,Books,Adventure Novel,80000.00,2024-04-27
+83,Agus Santoso,Foods,Fried Chicken,45000.00,2024-04-27
+84,Agus Santoso,Furniture,Bookshelf,800000.00,2024-04-27
+84,Agus Santoso,Foods,Pasta,60000.00,2024-04-27
+85,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-04-28
+85,Agus Santoso,Foods,Fruit Salad,40000.00,2024-04-28
+86,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-04-28
+86,Agus Santoso,Foods,Soup,35000.00,2024-04-28
+87,Agus Santoso,Clothing,Sweater,400000.00,2024-04-29
+87,Agus Santoso,Foods,Taco,45000.00,2024-04-29
+88,Agus Santoso,Books,Coloring Book,60000.00,2024-04-29
+88,Agus Santoso,Foods,French Fries,25000.00,2024-04-29
+89,Agus Santoso,Furniture,Coffee Table,1000000.00,2024-04-30
+89,Agus Santoso,Foods,Baklava,50000.00,2024-04-30
+90,Agus Santoso,Games,Board Game,250000.00,2024-04-30
+90,Agus Santoso,Foods,Cereal,30000.00,2024-04-30
+91,Agus Santoso,Health,Multivitamin,50000.00,2024-05-01
+91,Agus Santoso,Traffic,Toll Payment,30000.00,2024-05-01
+92,Agus Santoso,Furniture,Desk Lamp,150000.00,2024-05-01
+92,Agus Santoso,Health,Protein Shake,75000.00,2024-05-01
+93,Agus Santoso,Games,Chess Set,100000.00,2024-05-02
+93,Agus Santoso,Traffic,Parking Fee,20000.00,2024-05-02
+94,Agus Santoso,Electronics,Digital Camera,6000000.00,2024-05-02
+94,Agus Santoso,Health,Fitness Tracker,200000.00,2024-05-02
+95,Agus Santoso,Clothing,Skirt,350000.00,2024-05-03
+95,Agus Santoso,Traffic,Fuel,50000.00,2024-05-03
+96,Agus Santoso,Books,Adventure Novel,80000.00,2024-05-03
+96,Agus Santoso,Health,Yoga Mat,300000.00,2024-05-03
+97,Agus Santoso,Furniture,Bookshelf,800000.00,2024-05-04
+97,Agus Santoso,Traffic,Traffic Ticket,100000.00,2024-05-04
+98,Agus Santoso,Games,Jigsaw Puzzle,80000.00,2024-05-04
+98,Agus Santoso,Health,Vitamin C,60000.00,2024-05-04
+99,Agus Santoso,Electronics,Smartphone Case,200000.00,2024-05-05
+99,Agus Santoso,Traffic,Public Transport Fare,40000.00,2024-05-05
+10,Joko Susilo,Furniture,Desk,1200000.00,2024-04-10
+10,Joko Susilo,Games,Remote Control Car,300000.00,2024-04-10
+11,Kurnia Sari,Electronics,Smartwatch,1500000.00,2024-03-26
+11,Kurnia Sari,Clothing,Skirt,350000.00,2024-03-26
+12,Lia Fitriani,Books,Self-help Book,120000.00,2024-03-28
+12,Lia Fitriani,Furniture,Bookshelf,800000.00,2024-03-28
+13,Mira Wati,Games,Puzzle,150000.00,2024-03-27
+13,Mira Wati,Electronics,Camera,2000000.00,2024-03-27
+14,Nita Puspita,Clothing,Jacket,450000.00,2024-03-30
+14,Nita Puspita,Books,Poetry Book,180000.00,2024-03-30
+15,Oscar Putra,Furniture,Couch,2500000.00,2024-03-29
+15,Oscar Putra,Games,Board Game,250000.00,2024-03-29
+2,Budi Cahyono,Books,Novel,150000.00,2024-04-02
+2,Budi Cahyono,Furniture,Chair,1000000.00,2024-04-02
+3,Citra Dewi,Games,Action Figure,100000.00,2024-04-03
+3,Citra Dewi,Electronics,Headphones,500000.00,2024-04-03
+4,Dewi Lestari,Clothing,Jeans,300000.00,2024-04-04
+4,Dewi Lestari,Books,Cookbook,250000.00,2024-04-04
+5,Eko Prasetyo,Games,Doll,120000.00,2024-04-05
+5,Eko Prasetyo,Furniture,Table,1500000.00,2024-04-05
+6,Fita Rahmawati,Electronics,Laptop,8000000.00,2024-04-06
+6,Fita Rahmawati,Clothing,Dress,400000.00,2024-04-06
+7,Galih Wijaya,Books,Comic Book,80000.00,2024-04-07
+7,Galih Wijaya,Furniture,Sofa,2000000.00,2024-04-07
+8,Hana Sari,Games,LEGO,200000.00,2024-04-08
+8,Hana Sari,Electronics,Tablet,3000000.00,2024-04-08
+9,Indra Setiawan,Clothing,Hoodie,250000.00,2024-04-09
+9,Indra Setiawan,Books,Magazine,50000.00,2024-04-09
