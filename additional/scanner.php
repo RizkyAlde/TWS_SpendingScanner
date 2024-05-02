@@ -139,7 +139,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../additional/register.html">
-              <i the="ni ni-circle-08 text-pink"></i> Register
+              <i class="ni ni-circle-08 text-pink"></i> Register
             </a>
           </li>
         </ul>
@@ -203,7 +203,7 @@
       <div class="row">
         <div class="col">
           <div class="card shadow border-0">
-            <div class="card-body d-flex flex-column justify-content-center align-items-center" style="height: 600px;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center" style="height: 487px;">
               <h3>Image Scanner</h3>
               <input type="file" id="image-upload" accept="image/*" class="mb-2">
               <button class="btn btn-primary" onclick="scanImage()">Scan Image</button>
