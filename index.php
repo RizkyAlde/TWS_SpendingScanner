@@ -156,7 +156,7 @@
         <!-- Heading -->
         <h6 class="navbar-heading text-muted">Documentation</h6>
         <!-- Navigation -->
-        <ul class="navbar-nav mb-md-3">    
+        <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
             <a class="nav-link" href="./additional/login.html">
               <i class="ni ni-key-25 text-info"></i> Login
@@ -306,7 +306,7 @@
                 $total_price = $row['total_price'];
 
                 // Tampilkan total product_price
-                echo "<p style='font-size: 60px; color: #1b214a; font-weight: bold; text-align: center;'>" . number_format($total_price, 2) . "</p>";
+                echo "<p style='font-size: 56px; color: #1b214a; font-weight: bold; text-align: center;'>" . number_format($total_price, 2) . "</p>";
 
                 // Query untuk mengambil total product_price untuk bulan ini
                 $query_this_month = "SELECT SUM(product_price) AS total_this_month FROM report WHERE MONTH(date) = MONTH(CURDATE()) AND YEAR(date) = YEAR(CURDATE())";
@@ -321,8 +321,8 @@
                 $total_last_month = $row_last_month['total_last_month'];
 
                 // Tampilkan total product_price
-                echo "<p style='font-size: 20px; text-align: center;'>Total Pengeluaran Bulan Ini: " . number_format($total_this_month, 2) . "</p>";
-                echo "<p style='font-size: 20px; text-align: center;'>Total Pengeluaran Bulan Lalu: " . number_format($total_last_month, 2) . "</p>";
+                echo "<p style='font-size: 18px; text-align: center;'>Total Pengeluaran Bulan Ini: " . number_format($total_this_month, 2) . "</p>";
+                echo "<p style='font-size: 18px; text-align: center;'>Total Pengeluaran Bulan Lalu: " . number_format($total_last_month, 2) . "</p>";
 
 
                 // Tutup koneksi
@@ -471,112 +471,71 @@
             </div>
             <div class="table-responsive">
               <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Nama Kategori</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Persen Keseluruhan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      Facebook
-                    </th>
-                    <td>
-                      1,480
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">60%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Facebook
-                    </th>
-                    <td>
-                      5,480
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">70%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Google
-                    </th>
-                    <td>
-                      4,807
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">80%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Instagram
-                    </th>
-                    <td>
-                      3,678
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">75%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      twitter
-                    </th>
-                    <td>
-                      2,645
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">30%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <?php
+              // Membuat koneksi ke database
+              $koneksi = mysqli_connect("localhost", "root", "", "spending_scanner");
+
+              // Memeriksa apakah koneksi berhasil
+              if (!$koneksi) {
+                die("Koneksi gagal: " . mysqli_connect_error());
+              }
+
+              // Query untuk mengambil data dari view spending_summary
+              $query = "SELECT * FROM category_summary"; // Batasi hanya 6 kategori yang ditampilkan
+              $result = mysqli_query($koneksi, $query);
+
+              // Memeriksa apakah query berhasil dieksekusi
+              if ($result) {
+                ?>
+                <div class="table-responsive" style="height: 375px; overflow-y: auto;">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Nama Kategori</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Persen Keseluruhan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                      // Mengambil setiap baris data dan menampilkannya dalam tabel
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        // Extract data dari setiap baris
+                        $category_name = $row['category_name'];
+                        $total = $row['total_spending'];
+                        $percentage = $row['spending_percentage'];
+                        // Menampilkan baris tabel dengan data dinamis
+                        echo "<tr>";
+                        echo "<th scope='row'>$category_name</th>";
+                        echo "<td>$total</td>";
+                        echo "<td>";
+                        echo "<div class='d-flex align-items-center'>";
+                        echo "<span class='mr-2'>$percentage</span>";
+                        echo "<div>";
+                        echo "<div class='progress'>";
+                        echo "<div class='progress-bar bg-gradient-danger' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: $percentage;'></div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</td>";
+                        echo "</tr>";
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
+                <?php
+              } else {
+                // Jika query gagal dieksekusi
+                echo "Error: " . mysqli_error($koneksi);
+              }
+
+              // Menutup koneksi ke database
+              mysqli_close($koneksi);
+              ?>
+
+
+
             </div>
           </div>
         </div>
