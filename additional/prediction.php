@@ -37,7 +37,8 @@
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
       <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+        aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
@@ -47,10 +48,12 @@
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
         <li class="nav-item dropdown">
-          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <i class="ni ni-bell-55"></i>
           </a>
-          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
+            aria-labelledby="navbar-default_dropdown_1">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <div class="dropdown-divider"></div>
@@ -105,7 +108,8 @@
               </a>
             </div>
             <div class="col-6 collapse-close">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
                 <span></span>
                 <span></span>
               </button>
@@ -115,7 +119,8 @@
         <!-- Form -->
         <form class="mt-4 mb-3 d-md-none">
           <div class="input-group input-group-rounded input-group-merge">
-            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search"
+              aria-label="Search">
             <div class="input-group-prepend">
               <div class="input-group-text">
                 <span class="fa fa-search"></span>
@@ -151,7 +156,7 @@
         <!-- Heading -->
         <h6 class="navbar-heading text-muted">Documentation</h6>
         <!-- Navigation -->
-        <ul class="navbar-nav mb-md-3">          
+        <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
             <a class="nav-link" href="../additional/login.html">
               <i class="ni ni-key-25 text-info"></i> Login
@@ -186,7 +191,8 @@
         <!-- User -->
         <ul class="navbar-nav align-items-center d-none d-md-flex">
           <li class="nav-item dropdown">
-            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
                   <img alt="Image placeholder" src="../assets/img/theme/team-4-800x800.jpg">
@@ -229,60 +235,128 @@
     <!-- End Navbar -->
     <!-- Header -->
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-      
-    </div>
-    <div class="container-fluid mt--7">
-      <div class="row">
-        <div class="col">
-          <div class="card shadow border-0">
-            <div id="map-canvas" class="map-canvas" data-lat="40.748817" data-lng="-73.985428" style="height: 600px;"></div>
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+
           </div>
         </div>
       </div>
-      <!-- Footer -->
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+    </div>
+    <div class="container-fluid mt--7">
+      <!-- Table -->
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <h3 class="mb-0"></h3>
+            </div>
+            <div class="card-body">
+              <h1>ARIMA Prediction</h1>
+              <?php
+              // Cek apakah formulir sudah disubmit
+              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Tangkap data dari formulir HTML
+                $start_date = $_POST['start_date'];
+                $end_date = $_POST['end_date'];
+                $category = $_POST['category'];
+
+                // Panggil script Python untuk melakukan prediksi
+                $command = escapeshellcmd("python predict.py $start_date $end_date $category");
+                $output = shell_exec($command);
+
+                // Tampilkan hasil prediksi pada halaman HTML
+                // echo "<pre>$output</pre>";
+              
+                // Parsing output prediksi ke dalam bentuk array
+                $predictions = explode("\n", $output);
+                // Buat label untuk sumbu X (tanggal)
+                $labels = [];
+                $num_days = (strtotime($end_date) - strtotime($start_date)) / (60 * 60 * 24); // Hitung selisih hari
+                for ($i = 0; $i <= $num_days; $i++) { // Tambahkan 1 untuk memperhitungkan hari terakhir
+                  $labels[] = date('Y-m-d', strtotime("$start_date +$i day"));
+                }
+              }
+              ?>
+              <!-- Tambahkan elemen canvas untuk menampilkan grafik -->
+              <canvas id="predictionChart"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+              <script>
+                // Ambil data prediksi dari PHP
+                var predictions = <?php echo json_encode($predictions); ?>;
+                var labels = <?php echo json_encode($labels); ?>;
+
+                // Buat dataset untuk grafik
+                var data = {
+                  labels: labels,
+                  datasets: [{
+                    label: 'Prediction',
+                    data: predictions,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                  }]
+                };
+
+                // Konfigurasi grafik
+                var config = {
+                  type: 'line',
+                  data: data,
+                };
+
+                // Buat grafik menggunakan Chart.js
+                var predictionChart = new Chart(
+                  document.getElementById('predictionChart'),
+                  config
+                );
+              </script>
+              <h3>Input the criteria for prediction: </h3>
+              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" required><br><br>
+
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" required><br><br>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                  <option value="electronics_spending">Electronics Spending</option>
+                  <option value="clothing_spending">Clothing Spending</option>
+                  <option value="books_spending">Books Spending</option>
+                  <option value="furniture_spending">Furniture Spending</option>
+                  <option value="games_spending">Games Spending</option>
+                  <option value="foods_spending">Foods Spending</option>
+                  <option value="health_spending">Health Spending</option>
+                  <option value="traffic_spending">Traffic Spending</option>
+                  <option value="other_spending">Other Spending</option>
+                  <option value="all_spending">All Spending</option>
+                  <!-- Tambahkan pilihan kategori lainnya sesuai kebutuhan -->
+                </select><br><br>
+
+                <input type="submit" value="Predict">
+              </form>
             </div>
           </div>
-          <div class="col-xl-6">
-            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </footer>
+      </div>
     </div>
-  </div>
-  <!--   Core   -->
-  <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!--   Optional JS   -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!--   Argon JS   -->
-  <script src="../assets/js/argon-dashboard.min.js?v=1.1.2"></script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "argon-dashboard-free"
-      });
-  </script>
+
+
+    <!--   Core   -->
+    <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--   Optional JS   -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!--   Argon JS   -->
+    <script src="../assets/js/argon-dashboard.min.js?v=1.1.2"></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+      window.TrackJS &&
+        TrackJS.install({
+          token: "ee6fab19c5a04ac1a32a645abde4613a",
+          application: "argon-dashboard-free"
+        });
+    </script>
 </body>
 
 </html>

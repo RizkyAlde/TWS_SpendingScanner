@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2024 at 06:16 AM
+-- Generation Time: May 09, 2024 at 05:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `spending_scanner`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `all_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `all_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `books_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `books_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
 
 -- --------------------------------------------------------
 
@@ -46,6 +68,29 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 ('7', 'health'),
 ('8', 'traffic'),
 ('9', 'other');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `category_summary`
+-- (See below for the actual view)
+--
+CREATE TABLE `category_summary` (
+`category_name` varchar(255)
+,`total_spending` decimal(32,2)
+,`spending_percentage` varchar(41)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `clothing_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `clothing_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
 
 -- --------------------------------------------------------
 
@@ -363,6 +408,17 @@ INSERT INTO `date` (`date_id`, `date`) VALUES
 ('97', '2024-06-22'),
 ('98', '2024-06-23'),
 ('99', '2024-06-24');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `electronics_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `electronics_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
 
 -- --------------------------------------------------------
 
@@ -1350,6 +1406,61 @@ INSERT INTO `faktur_detail` (`detail_id`, `receipt_id`, `category_id`, `product_
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `foods_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `foods_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `furniture_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `furniture_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `games_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `games_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `health_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `health_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `other_spending`
+-- (See below for the actual view)
+--
+CREATE TABLE `other_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `report`
 -- (See below for the actual view)
 --
@@ -1365,121 +1476,12 @@ CREATE TABLE `report` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `spending_all`
+-- Stand-in structure for view `traffic_spending`
 -- (See below for the actual view)
 --
-CREATE TABLE `spending_all` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_books`
--- (See below for the actual view)
---
-CREATE TABLE `spending_books` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_clothing`
--- (See below for the actual view)
---
-CREATE TABLE `spending_clothing` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_electronics`
--- (See below for the actual view)
---
-CREATE TABLE `spending_electronics` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_foods`
--- (See below for the actual view)
---
-CREATE TABLE `spending_foods` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_furniture`
--- (See below for the actual view)
---
-CREATE TABLE `spending_furniture` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_games`
--- (See below for the actual view)
---
-CREATE TABLE `spending_games` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_health`
--- (See below for the actual view)
---
-CREATE TABLE `spending_health` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_other`
--- (See below for the actual view)
---
-CREATE TABLE `spending_other` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `spending_traffic`
--- (See below for the actual view)
---
-CREATE TABLE `spending_traffic` (
-`month` int(2)
-,`year` int(4)
-,`total_spending` decimal(32,2)
+CREATE TABLE `traffic_spending` (
+`date` date
+,`total_product_price` decimal(32,2)
 );
 
 -- --------------------------------------------------------
@@ -1519,6 +1521,96 @@ INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure for view `all_spending`
+--
+DROP TABLE IF EXISTS `all_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `all_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `books_spending`
+--
+DROP TABLE IF EXISTS `books_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `books_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'books' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `category_summary`
+--
+DROP TABLE IF EXISTS `category_summary`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `category_summary`  AS SELECT `c`.`category_name` AS `category_name`, sum(`fd`.`product_price`) AS `total_spending`, concat(round(sum(`fd`.`product_price`) / (select sum(`faktur_detail`.`product_price`) from `faktur_detail`) * 100,2),'%') AS `spending_percentage` FROM (`category` `c` join `faktur_detail` `fd` on(`c`.`category_id` = `fd`.`category_id`)) GROUP BY `c`.`category_name` ORDER BY sum(`fd`.`product_price`) DESC ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `clothing_spending`
+--
+DROP TABLE IF EXISTS `clothing_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `clothing_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'clothing' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `electronics_spending`
+--
+DROP TABLE IF EXISTS `electronics_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `electronics_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'electronics' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `foods_spending`
+--
+DROP TABLE IF EXISTS `foods_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `foods_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'foods' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `furniture_spending`
+--
+DROP TABLE IF EXISTS `furniture_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `furniture_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'furniture' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `games_spending`
+--
+DROP TABLE IF EXISTS `games_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `games_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'games' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `health_spending`
+--
+DROP TABLE IF EXISTS `health_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `health_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'health' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `other_spending`
+--
+DROP TABLE IF EXISTS `other_spending`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `other_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'other' GROUP BY `report`.`date` ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `report`
 --
 DROP TABLE IF EXISTS `report`;
@@ -1528,92 +1620,11 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `spending_all`
+-- Structure for view `traffic_spending`
 --
-DROP TABLE IF EXISTS `spending_all`;
+DROP TABLE IF EXISTS `traffic_spending`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_all`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM ((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_books`
---
-DROP TABLE IF EXISTS `spending_books`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_books`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'books' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_clothing`
---
-DROP TABLE IF EXISTS `spending_clothing`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_clothing`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'clothing' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_electronics`
---
-DROP TABLE IF EXISTS `spending_electronics`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_electronics`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'electronics' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_foods`
---
-DROP TABLE IF EXISTS `spending_foods`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_foods`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'foods' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_furniture`
---
-DROP TABLE IF EXISTS `spending_furniture`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_furniture`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'furniture' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_games`
---
-DROP TABLE IF EXISTS `spending_games`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_games`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'games' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_health`
---
-DROP TABLE IF EXISTS `spending_health`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_health`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'health' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_other`
---
-DROP TABLE IF EXISTS `spending_other`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_other`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'other' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `spending_traffic`
---
-DROP TABLE IF EXISTS `spending_traffic`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `spending_traffic`  AS SELECT month(`d`.`date`) AS `month`, year(`d`.`date`) AS `year`, sum(`fd`.`product_price`) AS `total_spending` FROM (((`faktur` `f` join `faktur_detail` `fd` on(`f`.`receipt_id` = `fd`.`receipt_id`)) join `category` `c` on(`fd`.`category_id` = `c`.`category_id`)) join `date` `d` on(`f`.`date_id` = `d`.`date_id`)) WHERE `c`.`category_name` = 'traffic' GROUP BY month(`d`.`date`), year(`d`.`date`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `traffic_spending`  AS SELECT `report`.`date` AS `date`, sum(`report`.`product_price`) AS `total_product_price` FROM `report` WHERE `report`.`category_name` = 'traffic' GROUP BY `report`.`date` ;
 
 --
 -- Indexes for dumped tables
