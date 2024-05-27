@@ -1,18 +1,4 @@
-<!--
 
-=========================================================
-* Argon Dashboard - v1.1.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,18 +191,14 @@
                 </div>
                 <div class="col">
                   <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"
-                      data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$"
-                      data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                    <li class="nav-item mr-2 mr-md-0">
+                      <a href="#" class="nav-link py-2 px-3 active" id="last-month-tab">
                         <span class="d-none d-md-block">Bulan Lalu</span>
                         <span class="d-md-none">M</span>
                       </a>
                     </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales"
-                      data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$"
-                      data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link py-2 px-3" id="this-month-tab">
                         <span class="d-none d-md-block">Bulan Ini</span>
                         <span class="d-md-none">W</span>
                       </a>
@@ -229,7 +211,7 @@
               <!-- Chart -->
               <div class="chart">
                 <!-- Chart wrapper -->
-                <canvas id="chart-sales" class="chart-canvas"></canvas>
+                <canvas id="lineChart" class="chart-canvas"></canvas>
               </div>
             </div>
           </div>
@@ -528,6 +510,58 @@
         token: "ee6fab19c5a04ac1a32a645abde4613a",
         application: "argon-dashboard-free"
       });
+  </script>
+  <script>
+    $(document).ready(function() {
+        // Membuat line chart
+        var lineChart = new Chart($('#lineChart'), {
+            type: 'line',
+            data: {
+                labels: ['Bulan Terakhir', 'Bulan Lalu'],
+                datasets: [{
+                    label: 'Pengeluaran',
+                    data: [], // Data akan diinisialisasi saat memuat data pertama kali
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        // Fungsi untuk memuat data dan memperbarui tampilan
+        function loadDataAndRefreshView() {
+            // Mengambil data dari server
+            $.ajax({
+                url: 'fetch_data.php', // Ganti dengan file PHP yang sesuai
+                method: 'GET',
+                success: function(data) {
+                    // Memperbarui chart dengan data dinamis
+                    lineChart.data.labels = ['Bulan Terakhir', 'Bulan Lalu'];
+                    lineChart.data.datasets[0].data = [data.total_last_month, data.total_this_month];
+                    lineChart.update();
+                }
+            });
+        }
+
+        // Event handler untuk memuat data saat halaman dimuat
+        loadDataAndRefreshView();
+        
+        // Memperbarui chart saat tab "Bulan Lalu" atau "Bulan Ini" diklik
+        $('#last-month-tab, #this-month-tab').click(function() {
+            // Memuat data dan memperbarui tampilan
+            loadDataAndRefreshView();
+        });
+    });
+
   </script>
 </body>
 
