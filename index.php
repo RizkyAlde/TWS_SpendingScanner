@@ -1,18 +1,4 @@
-<!--
 
-=========================================================
-* Argon Dashboard - v1.1.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,18 +191,14 @@
                 </div>
                 <div class="col">
                   <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"
-                      data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$"
-                      data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                    <li class="nav-item mr-2 mr-md-0">
+                      <a href="#" class="nav-link py-2 px-3 active" id="last-month-tab">
                         <span class="d-none d-md-block">Bulan Lalu</span>
                         <span class="d-md-none">M</span>
                       </a>
                     </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales"
-                      data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$"
-                      data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link py-2 px-3" id="this-month-tab">
                         <span class="d-none d-md-block">Bulan Ini</span>
                         <span class="d-md-none">W</span>
                       </a>
@@ -529,6 +511,120 @@
         application: "argon-dashboard-free"
       });
   </script>
+  <script>
+    $(document).ready(function () {
+      // Fungsi untuk memuat data dan memperbarui tampilan
+      function loadDataAndRefreshView() {
+        // Mengambil data dari server
+        $.ajax({
+          url: 'fetch_data.php',
+          method: 'GET',
+          success: function (data) {
+            // Memperbarui total pengeluaran
+            $('#total-spending-chart').html(
+              '<p style="font-size: 56px; color: #1b214a; font-weight: bold; text-align: center;">' + 
+              numberWithCommas(data.total_price) + '</p>' +
+              '<p style="font-size: 18px; text-align: center;">Total Pengeluaran Bulan Ini: ' + 
+              numberWithCommas(data.total_this_month) + '</p>' +
+              '<p style="font-size: 18px; text-align: center;">Total Pengeluaran Bulan Lalu: ' + 
+              numberWithCommas(data.total_last_month) + '</p>'
+            );
+
+            // Memperbarui tabel riwayat pengeluaran terbaru
+            var recentExpendituresHtml = '';
+            data.recent_expenditures.forEach(function (expenditure) {
+              recentExpendituresHtml += '<tr>' +
+                '<td>' + expenditure.receipt_id + '</td>' +
+                '<td>' + expenditure.user_name + '</td>' +
+                '<td>' + expenditure.category_name + '</td>' +
+                '<td>' + expenditure.product_name + '</td>' +
+                '<td>' + numberWithCommas(expenditure.product_price) + '</td>' +
+                '<td>' + expenditure.date + '</td>' +
+              '</tr>';
+            });
+            $('#recent-expenditures-table tbody').html(recentExpendituresHtml);
+
+            // Memperbarui tabel ringkasan kategori
+            var categorySummaryHtml = '';
+            data.category_summary.forEach(function (category) {
+              categorySummaryHtml += '<tr>' +
+                '<th scope="row">' + category.category_name + '</th>' +
+                '<td>' + category.total_spending + '</td>' +
+                '<td>' +
+                  '<div class="d-flex align-items-center">' +
+                    '<span class="mr-2">' + category.spending_percentage + '%</span>' +
+                    '<div>' +
+                      '<div class="progress">' +
+                        '<div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + category.spending_percentage + '%;"></div>' +
+                      '</div>' +
+                    '</div>' +
+                  '</div>' +
+                '</td>' +
+              '</tr>';
+            });
+            $('#category-summary-table tbody').html(categorySummaryHtml);
+
+            // Memperbarui chart dengan data dinamis
+            chartSales.data.datasets[0].data = data.this_month_chart_data;
+            chartSales.update();
+          }
+        });
+      }
+
+      // Event handler untuk memuat data saat halaman dimuat
+      loadDataAndRefreshView();
+
+      // Memperbarui chart dengan data bulan lalu saat tab "Bulan Lalu" diklik
+      $('#last-month-tab').click(function() {
+        // Mengambil data bulan lalu dan memperbarui tampilan
+        loadDataAndRefreshView();
+        // Menonaktifkan interaksi dengan grafik
+        chartSales.options.events = false;
+        chartSales.update();
+      });
+
+      // Memperbarui chart dengan data bulan ini saat tab "Bulan Ini" diklik
+      $('#this-month-tab').click(function() {
+        // Mengambil data bulan ini dan memperbarui tampilan
+        loadDataAndRefreshView();
+        // Menonaktifkan interaksi dengan grafik
+        chartSales.options.events = false;
+        chartSales.update();
+      });
+
+      // Fungsi untuk menambahkan koma pada angka
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      // Memperbarui chart dengan data bulan ini
+      var chartSales = new Chart($('#chart-sales'), {
+        type: 'line',
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [{
+            label: "Expenditure",
+            data: [], // Data akan diinisialisasi saat memuat data pertama kali
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          },
+          events: true // Aktifkan interaksi dengan grafik secara default
+        }
+      });
+    });
+  </script>
+
+
+
+
 </body>
 
 </html>
