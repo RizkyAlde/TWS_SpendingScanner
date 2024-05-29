@@ -1,18 +1,4 @@
-<!--
 
-=========================================================
-* Argon Dashboard - v1.1.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -156,7 +142,7 @@
         <!-- Heading -->
         <h6 class="navbar-heading text-muted">Documentation</h6>
         <!-- Navigation -->
-        <ul class="navbar-nav mb-md-3">    
+        <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
             <a class="nav-link" href="./additional/login.html">
               <i class="ni ni-key-25 text-info"></i> Login
@@ -181,48 +167,6 @@
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
 
         </form>
-        <!-- User -->
-        <ul class="navbar-nav align-items-center d-none d-md-flex">
-          <li class="nav-item dropdown">
-            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <div class="media align-items-center">
-                <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
-                </span>
-                <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
-                </div>
-              </div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-              <div class=" dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome!</h6>
-              </div>
-              <a href="./additional/profile.html" class="dropdown-item">
-                <i class="ni ni-single-02"></i>
-                <span>My profile</span>
-              </a>
-              <a href="./additional/profile.html" class="dropdown-item">
-                <i class="ni ni-settings-gear-65"></i>
-                <span>Settings</span>
-              </a>
-              <a href="./additional/profile.html" class="dropdown-item">
-                <i class="ni ni-calendar-grid-58"></i>
-                <span>Activity</span>
-              </a>
-              <a href="./additional/profile.html" class="dropdown-item">
-                <i class="ni ni-support-16"></i>
-                <span>Support</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#!" class="dropdown-item">
-                <i class="ni ni-user-run"></i>
-                <span>Logout</span>
-              </a>
-            </div>
-          </li>
-        </ul>
       </div>
     </nav>
     <!-- End Navbar -->
@@ -247,18 +191,14 @@
                 </div>
                 <div class="col">
                   <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"
-                      data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$"
-                      data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                    <li class="nav-item mr-2 mr-md-0">
+                      <a href="#" class="nav-link py-2 px-3 active" id="last-month-tab">
                         <span class="d-none d-md-block">Bulan Lalu</span>
                         <span class="d-md-none">M</span>
                       </a>
                     </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales"
-                      data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$"
-                      data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link py-2 px-3" id="this-month-tab">
                         <span class="d-none d-md-block">Bulan Ini</span>
                         <span class="d-md-none">W</span>
                       </a>
@@ -271,7 +211,7 @@
               <!-- Chart -->
               <div class="chart">
                 <!-- Chart wrapper -->
-                <canvas id="chart-sales" class="chart-canvas"></canvas>
+                <canvas id="lineChart" class="chart-canvas"></canvas>
               </div>
             </div>
           </div>
@@ -306,7 +246,7 @@
                 $total_price = $row['total_price'];
 
                 // Tampilkan total product_price
-                echo "<p style='font-size: 60px; color: #1b214a; font-weight: bold; text-align: center;'>" . number_format($total_price, 2) . "</p>";
+                echo "<p style='font-size: 56px; color: #1b214a; font-weight: bold; text-align: center;'>" . number_format($total_price, 2) . "</p>";
 
                 // Query untuk mengambil total product_price untuk bulan ini
                 $query_this_month = "SELECT SUM(product_price) AS total_this_month FROM report WHERE MONTH(date) = MONTH(CURDATE()) AND YEAR(date) = YEAR(CURDATE())";
@@ -321,8 +261,8 @@
                 $total_last_month = $row_last_month['total_last_month'];
 
                 // Tampilkan total product_price
-                echo "<p style='font-size: 20px; text-align: center;'>Total Pengeluaran Bulan Ini: " . number_format($total_this_month, 2) . "</p>";
-                echo "<p style='font-size: 20px; text-align: center;'>Total Pengeluaran Bulan Lalu: " . number_format($total_last_month, 2) . "</p>";
+                echo "<p style='font-size: 18px; text-align: center;'>Total Pengeluaran Bulan Ini: " . number_format($total_this_month, 2) . "</p>";
+                echo "<p style='font-size: 18px; text-align: center;'>Total Pengeluaran Bulan Lalu: " . number_format($total_last_month, 2) . "</p>";
 
 
                 // Tutup koneksi
@@ -471,112 +411,71 @@
             </div>
             <div class="table-responsive">
               <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Nama Kategori</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Persen Keseluruhan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      Facebook
-                    </th>
-                    <td>
-                      1,480
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">60%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Facebook
-                    </th>
-                    <td>
-                      5,480
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">70%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Google
-                    </th>
-                    <td>
-                      4,807
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">80%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Instagram
-                    </th>
-                    <td>
-                      3,678
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">75%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      twitter
-                    </th>
-                    <td>
-                      2,645
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">30%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30"
-                              aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <?php
+              // Membuat koneksi ke database
+              $koneksi = mysqli_connect("localhost", "root", "", "spending_scanner");
+
+              // Memeriksa apakah koneksi berhasil
+              if (!$koneksi) {
+                die("Koneksi gagal: " . mysqli_connect_error());
+              }
+
+              // Query untuk mengambil data dari view spending_summary
+              $query = "SELECT * FROM category_summary"; // Batasi hanya 6 kategori yang ditampilkan
+              $result = mysqli_query($koneksi, $query);
+
+              // Memeriksa apakah query berhasil dieksekusi
+              if ($result) {
+                ?>
+                <div class="table-responsive" style="height: 375px; overflow-y: auto;">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Nama Kategori</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Persen Keseluruhan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                      // Mengambil setiap baris data dan menampilkannya dalam tabel
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        // Extract data dari setiap baris
+                        $category_name = $row['category_name'];
+                        $total = $row['total_spending'];
+                        $percentage = $row['spending_percentage'];
+                        // Menampilkan baris tabel dengan data dinamis
+                        echo "<tr>";
+                        echo "<th scope='row'>$category_name</th>";
+                        echo "<td>$total</td>";
+                        echo "<td>";
+                        echo "<div class='d-flex align-items-center'>";
+                        echo "<span class='mr-2'>$percentage</span>";
+                        echo "<div>";
+                        echo "<div class='progress'>";
+                        echo "<div class='progress-bar bg-gradient-danger' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: $percentage;'></div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</td>";
+                        echo "</tr>";
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
+                <?php
+              } else {
+                // Jika query gagal dieksekusi
+                echo "Error: " . mysqli_error($koneksi);
+              }
+
+              // Menutup koneksi ke database
+              mysqli_close($koneksi);
+              ?>
+
+
+
             </div>
           </div>
         </div>
@@ -585,25 +484,10 @@
       <footer class="footer">
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative
-                Tim</a>
-            </div>
+
           </div>
           <div class="col-xl-6">
-            <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link"
-                  target="_blank">MIT License</a>
+            <ul class="nav nav-footer justify-content-center justify-content-xl-end">>
               </li>
             </ul>
           </div>
@@ -626,6 +510,58 @@
         token: "ee6fab19c5a04ac1a32a645abde4613a",
         application: "argon-dashboard-free"
       });
+  </script>
+  <script>
+    $(document).ready(function() {
+        // Membuat line chart
+        var lineChart = new Chart($('#lineChart'), {
+            type: 'line',
+            data: {
+                labels: ['Bulan Terakhir', 'Bulan Lalu'],
+                datasets: [{
+                    label: 'Pengeluaran',
+                    data: [], // Data akan diinisialisasi saat memuat data pertama kali
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        // Fungsi untuk memuat data dan memperbarui tampilan
+        function loadDataAndRefreshView() {
+            // Mengambil data dari server
+            $.ajax({
+                url: 'fetch_data.php', // Ganti dengan file PHP yang sesuai
+                method: 'GET',
+                success: function(data) {
+                    // Memperbarui chart dengan data dinamis
+                    lineChart.data.labels = ['Bulan Terakhir', 'Bulan Lalu'];
+                    lineChart.data.datasets[0].data = [data.total_last_month, data.total_this_month];
+                    lineChart.update();
+                }
+            });
+        }
+
+        // Event handler untuk memuat data saat halaman dimuat
+        loadDataAndRefreshView();
+        
+        // Memperbarui chart saat tab "Bulan Lalu" atau "Bulan Ini" diklik
+        $('#last-month-tab, #this-month-tab').click(function() {
+            // Memuat data dan memperbarui tampilan
+            loadDataAndRefreshView();
+        });
+    });
+
   </script>
 </body>
 
