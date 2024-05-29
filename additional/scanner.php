@@ -206,7 +206,7 @@
         <div class="col-md-6">
           <div class="card shadow">
             <div class="card-header border-0">
-              <<<<<<< HEAD <h3 class="mb-0">Input Pengeluaran Manual</h3>
+              <h3 class="mb-0">Input Pengeluaran Manual</h3>
             </div>
             <div class="card-body">
               <?php
@@ -321,66 +321,54 @@
               <h3 class="mb-0">Input Pengeluaran Scan</h3>
             </div>
             <div class="card-body">
-              =======
-              <h3 class="mb-0">Card tables</h3>
-            </div>
-            <div class="card-body">
-              >>>>>>> 67981ade66745984e34e6a9b10641f1c020aacc4
               <form enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="imageUpload">Upload Image</label>
                   <input type="file" class="form-control-file" id="imageUpload" accept="image/*">
                 </div>
-                <<<<<<< HEAD <div class="form-group image-preview" id="imagePreviewContainer" style="display: none;">
-                  =======
-                  <div class="form-group" id="imagePreviewContainer" style="display: none;">
-                    >>>>>>> 67981ade66745984e34e6a9b10641f1c020aacc4
-                    <label>Preview:</label>
-                    <img id="imagePreview" class="img-fluid">
-                  </div>
+                <div class="form-group image-preview" id="imagePreviewContainer" style="display: none;">
+                  <label>Preview:</label>
+                  <img id="imagePreview" class="img-fluid">
+                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <<<<<<< HEAD=======>>>>>>> 67981ade66745984e34e6a9b10641f1c020aacc4
-      <script>
-        document.getElementById('imageUpload').addEventListener('change', function () {
-          var file = this.files[0];
-          if (file) {
-            var reader = new FileReader();
-            reader.onload = function (event) {
-              var imagePreview = document.getElementById('imagePreview');
-              imagePreview.src = event.target.result;
-              document.getElementById('imagePreviewContainer').style.display = 'block';
-            };
-            reader.readAsDataURL(file);
-          }
-        });
-      </script>
-      <<<<<<< HEAD <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      document.getElementById('imageUpload').addEventListener('change', function () {
+        var file = this.files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function (event) {
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = event.target.result;
+            document.getElementById('imagePreviewContainer').style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        =======
-        >>>>>>> 67981ade66745984e34e6a9b10641f1c020aacc4
 
-        <!-- Footer -->
-        <!-- Footer -->
-        <footer class="footer">
-          <div class="row align-items-center justify-content-xl-between">
-            <div class="col-xl-6">
-              <div class="copyright text-center text-xl-left text-muted">
-              </div>
-            </div>
-            <div class="col-xl-6">
-              <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-              </ul>
-            </div>
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="row align-items-center justify-content-xl-between">
+        <div class="col-xl-6">
+          <div class="copyright text-center text-xl-left text-muted">
           </div>
-        </footer>
+        </div>
+        <div class="col-xl-6">
+          <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+          </ul>
+        </div>
+      </div>
+    </footer>
   </div>
   </div>
   <!--   Core   -->
