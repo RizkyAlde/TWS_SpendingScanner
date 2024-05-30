@@ -191,17 +191,11 @@
                 </div>
                 <div class="col">
                   <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0">
-                      <a href="#" class="nav-link py-2 px-3 active" id="last-month-tab">
-                        <span class="d-none d-md-block">Bulan Lalu</span>
-                        <span class="d-md-none">M</span>
-                      </a>
+                    <li class="nav-item" id="last-month-tab">
+                      <a href="#" class="nav-link py-2 px-3">Bulan Lalu</a>
                     </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link py-2 px-3" id="this-month-tab">
-                        <span class="d-none d-md-block">Bulan Ini</span>
-                        <span class="d-md-none">W</span>
-                      </a>
+                    <li class="nav-item" id="this-month-tab">
+                      <a href="#" class="nav-link py-2 px-3 active">Bulan Ini</a>
                     </li>
                   </ul>
                 </div>
@@ -502,7 +496,7 @@
   <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
   <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
   <!--   Argon JS   -->
-  <script src="./assets/js/argon-dashboard.min.js?v=1.1.2"></script>
+
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
     window.TrackJS &&
@@ -513,55 +507,66 @@
   </script>
   <script>
     $(document).ready(function() {
-        // Membuat line chart
-        var lineChart = new Chart($('#lineChart'), {
-            type: 'line',
-            data: {
-                labels: ['Bulan Terakhir', 'Bulan Lalu'],
-                datasets: [{
-                    label: 'Pengeluaran',
-                    data: [], // Data akan diinisialisasi saat memuat data pertama kali
-                    borderColor: 'white',
-                    borderWidth: 2,
-                    fill: false
-                }]
+      var ctx = document.getElementById('lineChart').getContext('2d');
+      var lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 31}, (_, i) => i + 1),
+          datasets: [{
+            label: '',
+            data: [],
+            borderColor: '#4c51bf',
+            borderWidth: 2,
+            fill: false
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
             },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
+            x: {
+              title: {
+                display: true,
+                text: 'Hari'
+              }
             }
-        });
-
-        // Fungsi untuk memuat data dan memperbarui tampilan
-        function loadDataAndRefreshView() {
-            // Mengambil data dari server
-            $.ajax({
-                url: 'fetch_data.php', // Ganti dengan file PHP yang sesuai
-                method: 'GET',
-                success: function(data) {
-                    // Memperbarui chart dengan data dinamis
-                    lineChart.data.labels = ['Bulan Terakhir', 'Bulan Lalu'];
-                    lineChart.data.datasets[0].data = [data.total_last_month, data.total_this_month];
-                    lineChart.update();
-                }
-            });
+          }
         }
+      });
 
-        // Event handler untuk memuat data saat halaman dimuat
-        loadDataAndRefreshView();
-        
-        // Memperbarui chart saat tab "Bulan Lalu" atau "Bulan Ini" diklik
-        $('#last-month-tab, #this-month-tab').click(function() {
-            // Memuat data dan memperbarui tampilan
-            loadDataAndRefreshView();
+      function loadDataAndRefreshView(month) {
+        $.ajax({
+          url: 'fetch_data.php',
+          method: 'GET',
+          data: { month: month },
+          success: function(data) {
+            var parsedData = JSON.parse(data);
+            lineChart.data.datasets[0].data = parsedData;
+            lineChart.update();
+          }
         });
-    });
+      }
 
+      // Load initial data for the current month
+      loadDataAndRefreshView('this_month');
+
+      // Event listener for "Bulan Lalu" button
+      $('#last-month-tab').click(function(e) {
+        e.preventDefault();
+        $(this).addClass('active');
+        $('#this-month-tab').removeClass('active');
+        loadDataAndRefreshView('last_month');
+      });
+
+      // Event listener for "Bulan Ini" button
+      $('#this-month-tab').click(function(e) {
+        e.preventDefault();
+        $(this).addClass('active');
+        $('#last-month-tab').removeClass('active');
+        loadDataAndRefreshView('this_month');
+      });
+    });
   </script>
 </body>
 
