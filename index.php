@@ -420,7 +420,7 @@
               // Memeriksa apakah query berhasil dieksekusi
               if ($result) {
                 ?>
-                <div class="table-responsive" style="height: 375px; overflow-y: auto;">
+                <div class="table-responsive" style="height: 350px; overflow-y: auto;">
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
