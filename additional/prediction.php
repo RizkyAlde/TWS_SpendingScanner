@@ -211,9 +211,9 @@
 
                 // Panggil script Python untuk melakukan prediksi
                 $command = escapeshellcmd("python predict.py $start_date $end_date $category");
-                $output = shell_exec($command . " 2>&1");
-                echo "<pre>$output</pre>";
-
+                $output = shell_exec($command);
+                #echo "<pre>$output</pre>";
+              
                 // Tampilkan hasil prediksi pada halaman HTML
                 // echo "<pre>$output</pre>";
               
