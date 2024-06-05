@@ -20,7 +20,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-    Argon Dashboard - Free Dashboard for Bootstrap 4 by Creative Tim
+    Spending Scanner - Information
   </title>
   <!-- Favicon -->
   <link href="../assets/img/brand/favicon.png" rel="icon" type="image/png">
@@ -37,7 +37,8 @@
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
       <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+        aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
@@ -47,10 +48,12 @@
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
         <li class="nav-item dropdown">
-          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <i class="ni ni-bell-55"></i>
           </a>
-          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
+            aria-labelledby="navbar-default_dropdown_1">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <div class="dropdown-divider"></div>
@@ -105,7 +108,8 @@
               </a>
             </div>
             <div class="col-6 collapse-close">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
                 <span></span>
                 <span></span>
               </button>
@@ -115,7 +119,8 @@
         <!-- Form -->
         <form class="mt-4 mb-3 d-md-none">
           <div class="input-group input-group-rounded input-group-merge">
-            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search"
+              aria-label="Search">
             <div class="input-group-prepend">
               <div class="input-group-text">
                 <span class="fa fa-search"></span>
@@ -129,7 +134,7 @@
             <a class="nav-link" href="../index.php">
               <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
-            </li>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="scanner.php">
               <i class="ni ni-camera-compact text-pink"></i> Scanner
@@ -192,35 +197,41 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="text-center text-md">SPENDING SCANNER: 
+              <h3 class="text-center text-md">SPENDING SCANNER:
                 <h3 class="text-center text-sm">
-                  Aplikasi Pencatatan Pengeluaran Keuangan Menggunakan Teknologi OCR(Optical Character Recognition) 
-</h3> 
-            </h3>
+                  Aplikasi Pencatatan Pengeluaran Keuangan Menggunakan Teknologi OCR(Optical Character Recognition)
+                </h3>
+              </h3>
             </div>
             <div class="card-body">
               <h3>SPENDING SCANNER</h3>
               <p class="text-justify text-sm">
-                Dalam era digital, pencatatan struk pembayaran secara manual tidak hanya memakan waktu tetapi juga rentan terhadap kesalahan. Aplikasi ini dikembangkan untuk mengatasi masalah tersebut dengan menggunakan teknologi web service yang dilengkapi dengan fitur pemindaian struk pembayaran. Dengan memanfaatkan teknologi Optical Character Recognition (OCR) dan kecerdasan buatan (Artificial Intelligence), aplikasi ini bertujuan untuk mengurangi beban administratif, meningkatkan efisiensi, dan memberikan pengalaman pengguna yang lebih baik dalam mencatat dan memonitor transaksi keuangan.
+                Dalam era digital, pencatatan struk pembayaran secara manual tidak hanya memakan waktu tetapi juga
+                rentan terhadap kesalahan. Aplikasi ini dikembangkan untuk mengatasi masalah tersebut dengan menggunakan
+                teknologi web service yang dilengkapi dengan fitur pemindaian struk pembayaran. Dengan memanfaatkan
+                teknologi Optical Character Recognition (OCR) dan kecerdasan buatan (Artificial Intelligence), aplikasi
+                ini bertujuan untuk mengurangi beban administratif, meningkatkan efisiensi, dan memberikan pengalaman
+                pengguna yang lebih baik dalam mencatat dan memonitor transaksi keuangan.
               </p>
               <p class="text-justify text-sm">
                 Fitur utama aplikasi ini meliputi:
-                <ul class="text-justify text-sm">
-                  <li>Pemindaian Struk Otomatis</li>
-                  <li>Akurasi Tinggi</li>
-                  <li>Pengkategorian Pengeluaran</li>
-                  <li>Visualisasi Data</li>
-                  <li>Real-time Updates</li>
-                </ul>
+              <ul class="text-justify text-sm">
+                <li>Pemindaian Struk Otomatis</li>
+                <li>Akurasi Tinggi</li>
+                <li>Pengkategorian Pengeluaran</li>
+                <li>Visualisasi Data</li>
+                <li>Real-time Updates</li>
+              </ul>
               </p>
               <p class="text-justify text-sm">
-                Aplikasi ini dikembangkan oleh tim dari Program Studi D4 Sains Data Terapan, Departemen Teknik Informatika dan Komputer, Politeknik Elektronika Negeri Surabaya:
-                <ul class="text-justify text-sm">
-                  <li>Puput Ayu Setiawati (3322600004)</li>
-                  <li>Muhammad Riski Alde (3322600010)</li>
-                  <li>Anita Damayanti (3322600013)</li>
-                  <li>Eky Fernanda Setyawan Putra (3322600025)</li>
-                </ul>
+                Aplikasi ini dikembangkan oleh tim dari Program Studi D4 Sains Data Terapan, Departemen Teknik
+                Informatika dan Komputer, Politeknik Elektronika Negeri Surabaya:
+              <ul class="text-justify text-sm">
+                <li>Puput Ayu Setiawati (3322600004)</li>
+                <li>Muhammad Riski Alde (3322600010)</li>
+                <li>Anita Damayanti (3322600013)</li>
+                <li>Eky Fernanda Setyawan Putra (3322600025)</li>
+              </ul>
               </p>
               <p class="text-justify text-sm">
                 Dosen Pembimbing: Yesta Medya Mahardhika S.Tr.Kom., M.T

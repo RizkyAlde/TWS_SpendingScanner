@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-    Argon Dashboard - Free Dashboard for Bootstrap 4 by Creative Tim
+    Spending Scanner - Dashboard
   </title>
   <!-- Favicon -->
   <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
@@ -506,12 +505,12 @@
       });
   </script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       var ctx = document.getElementById('lineChart').getContext('2d');
       var lineChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: Array.from({length: 31}, (_, i) => i + 1),
+          labels: Array.from({ length: 31 }, (_, i) => i + 1),
           datasets: [{
             label: '',
             data: [],
@@ -540,7 +539,7 @@
           url: 'fetch_data.php',
           method: 'GET',
           data: { month: month },
-          success: function(data) {
+          success: function (data) {
             var parsedData = JSON.parse(data);
             lineChart.data.datasets[0].data = parsedData;
             lineChart.update();
@@ -552,7 +551,7 @@
       loadDataAndRefreshView('this_month');
 
       // Event listener for "Bulan Lalu" button
-      $('#last-month-tab').click(function(e) {
+      $('#last-month-tab').click(function (e) {
         e.preventDefault();
         $(this).addClass('active');
         $('#this-month-tab').removeClass('active');
@@ -560,7 +559,7 @@
       });
 
       // Event listener for "Bulan Ini" button
-      $('#this-month-tab').click(function(e) {
+      $('#this-month-tab').click(function (e) {
         e.preventDefault();
         $(this).addClass('active');
         $('#last-month-tab').removeClass('active');
