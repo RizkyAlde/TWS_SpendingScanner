@@ -155,8 +155,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="history.php">
-              <i class="ni ni-book-bookmark text-yellow"></i> History
+            <a class="nav-link" href="information.php">
+              <i class="ni ni-book-bookmark text-yellow"></i> Information
             </a>
           </li>
         </ul>

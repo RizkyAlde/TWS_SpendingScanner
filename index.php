@@ -132,8 +132,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./additional/history.php">
-              <i class="ni ni-book-bookmark text-yellow"></i> History
+            <a class="nav-link " href="./additional/information.php">
+              <i class="ni ni-book-bookmark text-yellow"></i> Information
             </a>
           </li>
         </ul>
@@ -240,7 +240,7 @@
                 $total_price = $row['total_price'];
 
                 // Tampilkan total product_price
-                echo "<p style='font-size: 56px; color: #1b214a; font-weight: bold; text-align: center;'>" . number_format($total_price, 2) . "</p>";
+                echo "<p style='font-size: 30px; color: #1b214a; font-weight: bold; text-align: center;'>" . number_format($total_price, 2) . "</p>";
 
                 // Query untuk mengambil total product_price untuk bulan ini
                 $query_this_month = "SELECT SUM(product_price) AS total_this_month FROM report WHERE MONTH(date) = MONTH(CURDATE()) AND YEAR(date) = YEAR(CURDATE())";
@@ -515,7 +515,7 @@
           datasets: [{
             label: '',
             data: [],
-            borderColor: '#4c51bf',
+            borderColor: '#ECFCFC',
             borderWidth: 2,
             fill: false
           }]

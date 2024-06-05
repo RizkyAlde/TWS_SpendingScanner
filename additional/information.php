@@ -37,8 +37,7 @@
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
       <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
-        aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
@@ -48,12 +47,10 @@
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
         <li class="nav-item dropdown">
-          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
+          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="ni ni-bell-55"></i>
           </a>
-          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
-            aria-labelledby="navbar-default_dropdown_1">
+          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <div class="dropdown-divider"></div>
@@ -108,8 +105,7 @@
               </a>
             </div>
             <div class="col-6 collapse-close">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main"
-                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
                 <span></span>
                 <span></span>
               </button>
@@ -119,8 +115,7 @@
         <!-- Form -->
         <form class="mt-4 mb-3 d-md-none">
           <div class="input-group input-group-rounded input-group-merge">
-            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search"
-              aria-label="Search">
+            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
             <div class="input-group-prepend">
               <div class="input-group-text">
                 <span class="fa fa-search"></span>
@@ -134,19 +129,19 @@
             <a class="nav-link" href="../index.php">
               <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
-          </li>
+            </li>
           <li class="nav-item">
-            <a class="nav-link " href="scanner.php">
+            <a class="nav-link" href="scanner.php">
               <i class="ni ni-camera-compact text-pink"></i> Scanner
             </a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link active" href="prediction.php">
+          <li class="nav-item">
+            <a class="nav-link" href="prediction.php">
               <i class="ni ni-sound-wave text-orange"></i> Prediction
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="information.php">
+          <li class="nav-item active">
+            <a class="nav-link active" href="information.php">
               <i class="ni ni-book-bookmark text-yellow"></i> Information
             </a>
           </li>
@@ -176,7 +171,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="prediction.php">Prediction</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="information.php">Information</a>
       </div>
     </nav>
     <!-- End Navbar -->
@@ -193,98 +188,52 @@
     </div>
     <div class="container-fluid mt--7">
       <!-- Table -->
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="mb-0"></h3>
+              <h3 class="text-center text-md">SPENDING SCANNER: 
+                <h3 class="text-center text-sm">
+                  Aplikasi Pencatatan Pengeluaran Keuangan Menggunakan Teknologi OCR(Optical Character Recognition) 
+</h3> 
+            </h3>
             </div>
             <div class="card-body">
-              <h1>ARIMA Prediction</h1>
-              <?php
-              // Cek apakah formulir sudah disubmit
-              if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Tetapkan start_date ke tanggal besok
-                $start_date = date('Y-m-d', strtotime('tomorrow'));
-                $end_date = $_POST['end_date'];
-                $category = $_POST['category'];
-
-                // Panggil script Python untuk melakukan prediksi
-                $command = escapeshellcmd("python predict.py $start_date $end_date $category");
-                $output = shell_exec($command . " 2>&1");
-                echo "<pre>$output</pre>";
-
-                // Tampilkan hasil prediksi pada halaman HTML
-                // echo "<pre>$output</pre>";
-              
-                // Parsing output prediksi ke dalam bentuk array
-                $predictions = explode("\n", $output);
-                // Buat label untuk sumbu X (tanggal)
-                $labels = [];
-                $num_days = (strtotime($end_date) - strtotime($start_date)) / (60 * 60 * 24); // Hitung selisih hari
-                for ($i = 0; $i <= $num_days; $i++) { // Tambahkan 1 untuk memperhitungkan hari terakhir
-                  $labels[] = date('Y-m-d', strtotime("$start_date +$i day"));
-                }
-              }
-              ?>
-              <!-- Tambahkan elemen canvas untuk menampilkan grafik -->
-              <canvas id="predictionChart"></canvas>
-              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-              <script>
-                // Ambil data prediksi dari PHP
-                var predictions = <?php echo json_encode($predictions); ?>;
-                var labels = <?php echo json_encode($labels); ?>;
-
-                // Buat dataset untuk grafik
-                var data = {
-                  labels: labels,
-                  datasets: [{
-                    label: 'Prediction',
-                    data: predictions,
-                    borderColor: 'rgb(75, 192, 192)',
-                    tension: 0.1
-                  }]
-                };
-
-                // Konfigurasi grafik
-                var config = {
-                  type: 'line',
-                  data: data,
-                };
-
-                // Buat grafik menggunakan Chart.js
-                var predictionChart = new Chart(
-                  document.getElementById('predictionChart'),
-                  config
-                );
-              </script>
-              <h3>Input the criteria for prediction: </h3>
-              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <label for="end_date">Predict until:</label>
-                <input type="date" id="end_date" name="end_date" required><br><br>
-
-                <label for="category">Category:</label>
-                <select id="category" name="category" required>
-                  <option value="electronics_spending">Electronics Spending</option>
-                  <option value="clothing_spending">Clothing Spending</option>
-                  <option value="books_spending">Books Spending</option>
-                  <option value="furniture_spending">Furniture Spending</option>
-                  <option value="games_spending">Games Spending</option>
-                  <option value="foods_spending">Foods Spending</option>
-                  <option value="health_spending">Health Spending</option>
-                  <option value="traffic_spending">Traffic Spending</option>
-                  <option value="other_spending">Other Spending</option>
-                  <option value="all_spending">All Spending</option>
-                  <!-- Tambahkan pilihan kategori lainnya sesuai kebutuhan -->
-                </select><br><br>
-
-                <input type="submit" value="Predict">
-              </form>
+              <h3>SPENDING SCANNER</h3>
+              <p class="text-justify text-sm">
+                Dalam era digital, pencatatan struk pembayaran secara manual tidak hanya memakan waktu tetapi juga rentan terhadap kesalahan. Aplikasi ini dikembangkan untuk mengatasi masalah tersebut dengan menggunakan teknologi web service yang dilengkapi dengan fitur pemindaian struk pembayaran. Dengan memanfaatkan teknologi Optical Character Recognition (OCR) dan kecerdasan buatan (Artificial Intelligence), aplikasi ini bertujuan untuk mengurangi beban administratif, meningkatkan efisiensi, dan memberikan pengalaman pengguna yang lebih baik dalam mencatat dan memonitor transaksi keuangan.
+              </p>
+              <p class="text-justify text-sm">
+                Fitur utama aplikasi ini meliputi:
+                <ul class="text-justify text-sm">
+                  <li>Pemindaian Struk Otomatis</li>
+                  <li>Akurasi Tinggi</li>
+                  <li>Pengkategorian Pengeluaran</li>
+                  <li>Visualisasi Data</li>
+                  <li>Real-time Updates</li>
+                </ul>
+              </p>
+              <p class="text-justify text-sm">
+                Aplikasi ini dikembangkan oleh tim dari Program Studi D4 Sains Data Terapan, Departemen Teknik Informatika dan Komputer, Politeknik Elektronika Negeri Surabaya:
+                <ul class="text-justify text-sm">
+                  <li>Puput Ayu Setiawati (3322600004)</li>
+                  <li>Muhammad Riski Alde (3322600010)</li>
+                  <li>Anita Damayanti (3322600013)</li>
+                  <li>Eky Fernanda Setyawan Putra (3322600025)</li>
+                </ul>
+              </p>
+              <p class="text-justify text-sm">
+                Dosen Pembimbing: Yesta Medya Mahardhika S.Tr.Kom., M.T
+              </p>
+              <p class="text-justify text-sm">
+                Untuk informasi lebih lanjut, Anda dapat menghubungi tim pengembang melalui email: email@example.com
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
 
 
