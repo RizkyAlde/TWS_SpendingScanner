@@ -238,8 +238,8 @@
               $user_name = "Agus Hartono";
               $user_id = 1;
 
-              // Handle form submission
-              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              // Handle form submission for manual input
+              if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['manualSubmit'])) {
                 $category_name = $_POST['category_name'];
                 $product_name = $_POST['product_name'];
                 $product_price = $_POST['product_price'];
@@ -284,6 +284,7 @@
               ?>
               <form enctype="multipart/form-data" method="post"
                 action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <input type="hidden" name="manualSubmit" value="1">
                 <div class="form-group">
                   <label for="category_name">Category</label>
                   <select class="form-control" id="category_name" name="category_name" required>
@@ -315,60 +316,168 @@
             </div>
           </div>
         </div>
+
         <div class="col-md-6">
           <div class="card shadow">
             <div class="card-header border-0">
               <h3 class="mb-0">Input Pengeluaran Scan</h3>
             </div>
             <div class="card-body">
-              <form enctype="multipart/form-data">
+              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
+                enctype="multipart/form-data">
+                <input type="hidden" name="scanSubmit" value="1">
                 <div class="form-group">
-                  <label for="imageUpload">Upload Image</label>
-                  <input type="file" class="form-control-file" id="imageUpload" accept="image/*">
-                </div>
-                <div class="form-group image-preview" id="imagePreviewContainer" style="display: none;">
-                  <label>Preview:</label>
-                  <img id="imagePreview" class="img-fluid">
+                  <label for="receipt">Pilih File Struk Belanja:</label>
+                  <input type="file" id="receipt" name="receipt" accept="image/*" required class="form-control"><br><br>
+                  <label for="date">Pilih Tanggal:</label>
+                  <input type="date" id="date" name="date" required class="form-control"><br><br>
+                  <button type="submit" class="btn btn-primary">Unggah dan Parse</button>
                 </div>
               </form>
+
+              <?php
+              // Koneksi ke database
+              $koneksi = mysqli_connect("localhost", "root", "", "spending_scanner");
+              if (mysqli_connect_errno()) {
+                echo "Koneksi database gagal: " . mysqli_connect_error();
+                exit();
+              }
+
+              if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['scanSubmit']) && isset($_FILES['receipt']) && $_FILES['receipt']['error'] === UPLOAD_ERR_OK) {
+                // Path to temporary uploaded file
+                $imagePath = $_FILES['receipt']['tmp_name'];
+
+                try {
+                  // Include Mindee's autoloader
+                  require_once 'vendor/autoload.php';
+
+                  // Replace 'YOUR_API_KEY' with your actual Mindee API key
+                  $apiKey = 'eca862a4eeda1828fd362a2d1a9e2421';
+
+                  // Initialize a new Mindee client
+                  $mindeeClient = new Mindee\Client($apiKey);
+
+                  // Load file from temporary location
+                  $inputSource = $mindeeClient->sourceFromPath($imagePath);
+
+                  // Parse the receipt image
+                  $apiResponse = $mindeeClient->parse(Mindee\Product\Receipt\ReceiptV5::class, $inputSource);
+
+                  // Debugging: Check API response
+                  // echo "<pre>";
+                  // print_r($apiResponse);
+                  // echo "</pre>";
+              
+                  // Display the parsed receipt document
+                  echo "<form action=\"\" method=\"post\">";
+                  echo "<input type=\"hidden\" name=\"date\" value=\"" . htmlspecialchars($_POST['date']) . "\">"; // Hidden input for date
+                  foreach ($apiResponse->document->inference->prediction->lineItems as $key => $lineItemsElem) {
+                    //  echo "<p>Product Name: " . htmlspecialchars($lineItemsElem->description) . " | Total Amount: " . htmlspecialchars($lineItemsElem->totalAmount) . "</p>";
+                    echo "<label for=\"product_name$key\">Product Name:</label>";
+                    echo "<input type=\"text\" name=\"product_name[]\" id=\"product_name$key\" value=\"" . htmlspecialchars($lineItemsElem->description) . "\" class=\"form-control\">";
+                    echo "<label for=\"product_price$key\">Total Amount:</label>";
+                    echo "<input type=\"text\" name=\"product_price[]\" id=\"product_price$key\" value=\"" . htmlspecialchars($lineItemsElem->totalAmount) . "\" class=\"form-control\">";
+                    echo "<label for=\"category_name$key\">Pilih Kategori:</label>";
+                    echo "<select name=\"category_name[]\" id=\"category_name$key\" class=\"form-control\">";
+                    echo "<option value=\"1\">electronics</option>";
+                    echo "<option value=\"2\">clothing</option>";
+                    echo "<option value=\"3\">books</option>";
+                    echo "<option value=\"4\">furniture</option>";
+                    echo "<option value=\"5\">games</option>";
+                    echo "<option value=\"6\">foods</option>";
+                    echo "<option value=\"7\">health</option>";
+                    echo "<option value=\"8\">traffic</option>";
+                    echo "<option value=\"9\">other</option>";
+                    echo "</select>";
+                    echo "<br><br>";
+                  }
+                  echo "<button type=\"submit\" name=\"addData\" class=\"btn btn-primary\">Tambahkan</button>";
+                  echo "</form>";
+
+                } catch (\Exception $e) {
+                  // Handle any errors that occur during the parsing process
+                  echo 'Error: ' . $e->getMessage();
+                }
+              } elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addData'])) {
+                // Process form submission for adding data
+                $user_id = 1; // Assuming user_id is always 1 for this example
+              
+                // Get the next date_id
+                $result = mysqli_query($koneksi, "SELECT MAX(date_id) AS max_date_id FROM date");
+                $row = mysqli_fetch_assoc($result);
+                $next_date_id = $row['max_date_id'] + 1;
+
+                // Insert new date
+                $date = $_POST['date'];
+                $stmt_date = mysqli_prepare($koneksi, "INSERT INTO date (date_id, date) VALUES (?, ?)");
+                mysqli_stmt_bind_param($stmt_date, "is", $next_date_id, $date);
+                mysqli_stmt_execute($stmt_date);
+                mysqli_stmt_close($stmt_date);
+
+                // Get the next receipt_id
+                $result = mysqli_query($koneksi, "SELECT MAX(receipt_id) AS max_receipt_id FROM faktur");
+                $row = mysqli_fetch_assoc($result);
+                $next_receipt_id = $row['max_receipt_id'] + 1;
+
+                // Insert new faktur
+                $stmt_faktur = mysqli_prepare($koneksi, "INSERT INTO faktur (receipt_id, user_id, date_id) VALUES (?, ?, ?)");
+                mysqli_stmt_bind_param($stmt_faktur, "iii", $next_receipt_id, $user_id, $next_date_id);
+                mysqli_stmt_execute($stmt_faktur);
+                mysqli_stmt_close($stmt_faktur);
+
+                // Insert new faktur_detail
+                foreach ($_POST['category_name'] as $key => $category_id) {
+                  $product_name = $_POST['product_name'][$key];
+                  $product_price = $_POST['product_price'][$key];
+
+                  // Get the next detail_id
+                  $result = mysqli_query($koneksi, "SELECT MAX(detail_id) AS max_detail_id FROM faktur_detail");
+                  $row = mysqli_fetch_assoc($result);
+                  $next_detail_id = $row['max_detail_id'] + 1;
+
+                  $stmt_detail = mysqli_prepare($koneksi, "INSERT INTO faktur_detail (detail_id, receipt_id, product_name, product_price, category_id) VALUES (?, ?, ?, ?, ?)");
+                  mysqli_stmt_bind_param($stmt_detail, "iisii", $next_detail_id, $next_receipt_id, $product_name, $product_price, $category_id);
+                  mysqli_stmt_execute($stmt_detail);
+                  mysqli_stmt_close($stmt_detail);
+                }
+
+                echo "<div class='alert alert-success'>Data successfully inserted!</div>";
+              } else {
+                // If no file has been uploaded or an error occurred during upload
+                if (isset($_FILES['receipt']['error']) && $_FILES['receipt']['error'] !== UPLOAD_ERR_OK) {
+                  echo 'Error: File upload error. Code: ' . $_FILES['receipt']['error'];
+                }
+              }
+              ?>
             </div>
           </div>
         </div>
+
+
+
+
       </div>
     </div>
-    <script>
-      document.getElementById('imageUpload').addEventListener('change', function () {
-        var file = this.files[0];
-        if (file) {
-          var reader = new FileReader();
-          reader.onload = function (event) {
-            var imagePreview = document.getElementById('imagePreview');
-            imagePreview.src = event.target.result;
-            document.getElementById('imagePreviewContainer').style.display = 'block';
-          };
-          reader.readAsDataURL(file);
-        }
-      });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-    <!-- Footer -->
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="row align-items-center justify-content-xl-between">
-        <div class="col-xl-6">
-          <div class="copyright text-center text-xl-left text-muted">
-          </div>
-        </div>
-        <div class="col-xl-6">
-          <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-          </ul>
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="row align-items-center justify-content-xl-between">
+      <div class="col-xl-6">
+        <div class="copyright text-center text-xl-left text-muted">
         </div>
       </div>
-    </footer>
+      <div class="col-xl-6">
+        <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+        </ul>
+      </div>
+    </div>
+  </footer>
   </div>
   </div>
   <!--   Core   -->

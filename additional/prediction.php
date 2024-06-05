@@ -204,8 +204,8 @@
               <?php
               // Cek apakah formulir sudah disubmit
               if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Tangkap data dari formulir HTML
-                $start_date = $_POST['start_date'];
+                // Tetapkan start_date ke tanggal besok
+                $start_date = date('Y-m-d', strtotime('tomorrow'));
                 $end_date = $_POST['end_date'];
                 $category = $_POST['category'];
 
@@ -259,10 +259,7 @@
               </script>
               <h3>Input the criteria for prediction: </h3>
               <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <label for="start_date">Start Date:</label>
-                <input type="date" id="start_date" name="start_date" required><br><br>
-
-                <label for="end_date">End Date:</label>
+                <label for="end_date">Predict until:</label>
                 <input type="date" id="end_date" name="end_date" required><br><br>
 
                 <label for="category">Category:</label>
@@ -287,6 +284,7 @@
         </div>
       </div>
     </div>
+
 
 
     <!--   Core   -->
