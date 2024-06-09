@@ -372,11 +372,12 @@
                   echo "<form action=\"\" method=\"post\">";
                   echo "<input type=\"hidden\" name=\"date\" value=\"" . htmlspecialchars($_POST['date']) . "\">"; // Hidden input for date
                   foreach ($apiResponse->document->inference->prediction->lineItems as $key => $lineItemsElem) {
+                    $parsedPrice = $lineItemsElem->totalAmount * 1000;
                     //  echo "<p>Product Name: " . htmlspecialchars($lineItemsElem->description) . " | Total Amount: " . htmlspecialchars($lineItemsElem->totalAmount) . "</p>";
                     echo "<label for=\"product_name$key\">Product Name:</label>";
                     echo "<input type=\"text\" name=\"product_name[]\" id=\"product_name$key\" value=\"" . htmlspecialchars($lineItemsElem->description) . "\" class=\"form-control\">";
                     echo "<label for=\"product_price$key\">Total Amount:</label>";
-                    echo "<input type=\"text\" name=\"product_price[]\" id=\"product_price$key\" value=\"" . htmlspecialchars($lineItemsElem->totalAmount) . "\" class=\"form-control\">";
+                    echo "<input type=\"text\" name=\"product_price[]\" id=\"product_price$key\" value=\"" . htmlspecialchars($parsedPrice) . "\" class=\"form-control\">";
                     echo "<label for=\"category_name$key\">Pilih Kategori:</label>";
                     echo "<select name=\"category_name[]\" id=\"category_name$key\" class=\"form-control\">";
                     echo "<option value=\"1\">electronics</option>";
